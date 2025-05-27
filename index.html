@@ -171,6 +171,25 @@
       transition: transform 0.3s ease;
       filter: brightness(0) saturate(100%) invert(34%) sepia(77%) saturate(303%) hue-rotate(175deg) brightness(102%) contrast(92%);
     }
+    .logo-carousel {
+  position: relative;
+  width: 220px;
+  height: 100px;
+  margin: 20px auto;
+}
+.carousel-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+.carousel-img.active {
+  opacity: 1;
+}
+
   </style>
 </head>
 <body>
@@ -179,39 +198,46 @@
 
   <!-- Slide 1 -->
   <section class="slide slide1">
-    <div class="logo-container">
-      <img src="logo_qalma.png" alt="Logo Qalma">
-    </div>
-    <video class="video-nubes" src="nubes2.webm" autoplay muted playsinline></video>
-    <div class="arrow down" onclick="scrollToSlide(2)">
-      <svg viewBox="0 0 24 24"><path d="M12 16.5l-8-8 1.4-1.4L12 13.7l6.6-6.6L20 8.5z"/></svg>
-    </div>
-  </section>
+  <div class="logo-container">
+    <img src="logo_qalma.png" alt="Logo Qalma">
+  </div>
+  <video class="video-nubes" src="nubes2.webm" autoplay muted playsinline></video>
+  <div class="arrow down" onclick="scrollToSlide(2)">
+    <svg viewBox="0 0 24 24"><path d="M12 16.5l-8-8 1.4-1.4L12 13.7l6.6-6.6L20 8.5z"/></svg>
+  </div>
+</section>
 
-  <!-- Slide 2 -->
-  <section class="slide slide2" id="slide2">
-    <div class="arrow up" onclick="scrollToSlide(1)">
-      <svg viewBox="0 0 24 24" style="transform: rotate(180deg);"><path d="M12 16.5l-8-8 1.4-1.4L12 13.7l6.6-6.6L20 8.5z"/></svg>
+<section class="slide slide2" id="slide2">
+  <div class="arrow up" onclick="scrollToSlide(1)">
+    <svg viewBox="0 0 24 24" style="transform: rotate(180deg);"><path d="M12 16.5l-8-8 1.4-1.4L12 13.7l6.6-6.6L20 8.5z"/></svg>
+  </div>
+  <div class="content-wrapper">
+    <h1 class="headline">Bienvenidos a <img src="logo_qalma.png" alt="Qalma" class="logo-inline"></h1>
+    
+<div class="logo-carousel">
+  <img src="qalma-2003.png" class="carousel-img active" alt="Qalma 2003">
+  <img src="qalma-2004.png" class="carousel-img" alt="Qalma 2004">
+  <img src="qalma-2006.png" class="carousel-img" alt="Qalma 2006">
+  <img src="qalma-2011.png" class="carousel-img" alt="Qalma 2011">
+  <img src="QALMA_2019.png" class="carousel-img" alt="Qalma 2019">
+</div>
+    <p class="intro-text">
+      En un mundo cambiante, incierto y complejo, creemos firmemente que el valor nace del propósito.
+      Desde 2003, Qalma acompaña a empresas y organizaciones que no solo quieren crecer,
+      sino hacerlo con conciencia, con impacto y con estructura.
+    </p>
+    <div class="transformacion">
+      Porque creemos que las empresas no están solo para facturar, sino para transformar.<br>
+      Que la sostenibilidad no es un sello, sino una forma de pensar.<br>
+      Y que la excelencia se construye desde las pequeñas acciones diarias,
+      no desde grandes eslóganes vacíos.
     </div>
-    <div class="content-wrapper">
-      <h1 class="headline">Bienvenidos a <img src="logo_qalma.png" alt="Qalma" class="logo-inline"></h1>
-      <p class="quote">“Más de dos décadas trabajando y creciendo en el mundo de la gestión empresarial”</p>
-      <p class="intro-text">
-        En un mundo cambiante, incierto y complejo, creemos firmemente que el valor nace del propósito.
-        Desde 2003, Qalma acompaña a empresas y organizaciones que no solo quieren crecer,
-        sino hacerlo con conciencia, con impacto y con estructura.
-      </p>
-      <div class="transformacion">
-        Porque creemos que las empresas no están solo para facturar, sino para transformar.<br>
-        Que la sostenibilidad no es un sello, sino una forma de pensar.<br>
-        Y que la excelencia se construye desde las pequeñas acciones diarias,
-        no desde grandes eslóganes vacíos.
-      </div>
-      <div class="esencia">
-        Qalma es calidad con propósito. Es estrategia con alma. Es acción imperfecta, pero valiente.
-      </div>
+    <div class="esencia">
+      Qalma es calidad con propósito. Es estrategia con alma. Es acción imperfecta, pero valiente.
     </div>
-  </section>
+  </div>
+</section>
+
 
 </div>
 
@@ -254,6 +280,16 @@
     });
   });
 </script>
+  <script>
+  let current = 0;
+  const images = document.querySelectorAll('.carousel-img');
+  setInterval(() => {
+    images[current].classList.remove('active');
+    current = (current + 1) % images.length;
+    images[current].classList.add('active');
+  }, 2500);
+</script>
+
 
 </body>
 </html>
