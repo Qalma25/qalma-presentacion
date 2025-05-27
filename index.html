@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Qalma · Nubes mágicas</title>
+  <title>Qalma · Bienvenida</title>
   <style>
     html, body {
       margin: 0;
@@ -12,53 +12,70 @@
       height: 100%;
       overflow: hidden;
       position: relative;
+      cursor: none;
     }
 
-    .logo-container {
+    .logo {
       position: absolute;
       top: 50%;
       left: 50%;
-      z-index: 2;
       transform: translate(-50%, -50%);
+      z-index: 0;
     }
 
-    .logo-container img {
-      width: 340px;
+    .logo img {
+      width: 360px;
     }
 
-    .nubes {
+    .cloud {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('nubes.png') center/cover no-repeat;
-      z-index: 3;
+      background-image: url('nubes.png');
+      background-size: contain;
+      background-repeat: no-repeat;
       pointer-events: none;
-
-      /* La parte mágica: máscara circular centrada */
-      -webkit-mask-image: radial-gradient(circle at center, transparent 80px, rgba(0,0,0,1) 180px);
-      mask-image: radial-gradient(circle at center, transparent 80px, rgba(0,0,0,1) 180px);
-      mask-repeat: no-repeat;
-      mask-size: cover;
-      transition: mask-image 2s ease, opacity 3s ease;
+      opacity: 1;
+      transition: opacity 1.5s ease, transform 1.5s ease;
+      z-index: 2;
     }
 
-    /* OPCIONAL: efecto al pasar el ratón */
-    body:hover .nubes {
-      opacity: 0.4;
+    .cloud.revealed {
+      opacity: 0;
+      transform: scale(1.1);
     }
   </style>
 </head>
 <body>
 
-  <!-- Logo visible a través del agujero -->
-  <div class="logo-container">
+  <div class="logo">
     <img src="logo_qalma.png" alt="Logo Qalma">
   </div>
 
-  <!-- Nube grande cubriendo todo con un hueco central -->
-  <div class="nubes"></div>
+  <script>
+    const cloudCount = 18;
+
+    for (let i = 0; i < cloudCount; i++) {
+      const cloud = document.createElement('div');
+      cloud.classList.add('cloud');
+      cloud.style.top = Math.random() * 100 + '%';
+      cloud.style.left = Math.random() * 100 + '%';
+      cloud.style.width = 200 + Math.random() * 250 + 'px';
+      cloud.style.height = 120 + Math.random() * 130 + 'px';
+      document.body.appendChild(cloud);
+    }
+
+    document.body.addEventListener('mousemove', e => {
+      const clouds = document.querySelectorAll('.cloud');
+      clouds.forEach(cloud => {
+        const rect = cloud.getBoundingClientRect();
+        const dx = rect.left + rect.width / 2 - e.clientX;
+        const dy = rect.top + rect.height / 2 - e.clientY;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        if (distance < 120) {
+          cloud.classList.add('revealed');
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
