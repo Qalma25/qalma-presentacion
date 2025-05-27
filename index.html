@@ -1,126 +1,3 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Qalma · Bienvenida</title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow: hidden;
-      font-family: sans-serif;
-    }
-
-    .wrapper {
-      height: 200%;
-      width: 100%;
-      transition: transform 0.8s ease-out;
-    }
-
-    .slide {
-      width: 100%;
-      height: 100vh;
-      position: relative;
-    }
-
-    /* Slide 1 */
-    .slide1 {
-      background: radial-gradient(circle at center, #ffffff 0%, #d9ecff 100%);
-      overflow: hidden;
-    }
-
-    .logo-container {
-      position: absolute;
-      top: 45%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 1;
-      animation: zoomSlow 60s ease-in-out infinite;
-    }
-
-    .logo-container img {
-      width: 480px;
-    }
-
-    @keyframes zoomSlow {
-      0% {
-        transform: translate(-50%, -50%) scale(1);
-      }
-      100% {
-        transform: translate(-50%, -50%) scale(1.08);
-      }
-    }
-
-    .video-nubes {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: 2;
-      pointer-events: none;
-    }
-
-    .arrow {
-      position: absolute;
-      bottom: 40px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 3;
-      cursor: pointer;
-      animation: bounce 2s infinite;
-    }
-
-    .arrow svg {
-      width: 40px;
-      height: 40px;
-      fill: #444444;
-    }
-
-    @keyframes bounce {
-      0%, 100% {
-        transform: translateX(-50%) translateY(0);
-      }
-      50% {
-        transform: translateX(-50%) translateY(10px);
-      }
-    }
-
-    /* Slide 2 */
-    .slide2 {
-      background-color: white;
-      padding: 80px 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      color: #2c3e50;
-    }
-
-    .slide2 h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .slide2 blockquote {
-      font-size: 1.2rem;
-      font-style: italic;
-      color: #888;
-      margin-bottom: 2rem;
-    }
-
-    .slide2 p {
-      max-width: 800px;
-      line-height: 1.6;
-      font-size: 1.1rem;
-      text-align: center;
-    }
-  </style>
-</head>
-<body>
 
 <div class="wrapper" id="pageWrapper">
 
@@ -130,32 +7,75 @@
       <img src="logo_qalma.png" alt="Logo Qalma">
     </div>
     <video class="video-nubes" src="nubes2.webm" autoplay muted playsinline></video>
-    <div class="arrow" onclick="scrollToSlide2()">
+    <div class="arrow down" onclick="scrollToSlide(2)">
       <svg viewBox="0 0 24 24"><path d="M12 16.5l-8-8 1.4-1.4L12 13.7l6.6-6.6L20 8.5z"/></svg>
     </div>
   </section>
 
   <!-- Slide 2 -->
-  <section class="slide slide2">
-    <h1>Bienvenidos a Qalma</h1>
-    <blockquote>“Lo que crees, creas.”</blockquote>
-    <p>
-      En un mundo cambiante, incierto y complejo, creemos firmemente que el valor nace del propósito.  
-      Desde 2003, Qalma acompaña a empresas y organizaciones que no solo quieren crecer, sino hacerlo con conciencia, con impacto y con estructura.  
-      <br><br>
-      Porque creemos que las empresas no están solo para facturar, sino para transformar. Que la sostenibilidad no es un sello, sino una forma de pensar.  
-      Y que la excelencia se construye desde las pequeñas acciones diarias, no desde grandes eslóganes vacíos.  
-      <br><br>
-      <strong>Qalma es calidad con propósito. Es estrategia con alma. Es acción imperfecta, pero valiente.</strong>
-    </p>
+  <section class="slide slide2" id="slide2">
+    <div class="arrow up" onclick="scrollToSlide(1)">
+      <svg viewBox="0 0 24 24" style="transform: rotate(180deg);"><path d="M12 16.5l-8-8 1.4-1.4L12 13.7l6.6-6.6L20 8.5z"/></svg>
+    </div>
+
+    <h1 class="headline">Bienvenidos a <img src="logo_qalma.png" alt="Qalma" class="logo-inline"></h1>
+    <p class="quote">“Lo que crees, creas.”</p>
+
+    <div class="info-block"><h2>Valor con Propósito</h2><p>En un mundo cambiante, creemos que el valor nace del propósito. Qalma acompaña desde 2003 a quienes quieren crecer con impacto.</p></div>
+    <div class="info-block"><h2>No solo facturar</h2><p>Las empresas no están solo para vender, sino para transformar. La sostenibilidad es una forma de pensar, no solo un sello.</p></div>
+    <div class="info-block"><h2>Pequeñas acciones, gran impacto</h2><p>La excelencia se construye en los detalles, en lo invisible, en la coherencia diaria. No en eslóganes vacíos.</p></div>
+    <div class="info-block final"><h2>Qalma es...</h2><p>Calidad con propósito. Estrategia con alma. Acción imperfecta, pero valiente.</p></div>
   </section>
 
 </div>
 
 <script>
-  function scrollToSlide2() {
-    document.getElementById('pageWrapper').style.transform = 'translateY(-100vh)';
+  function scrollToSlide(num) {
+    document.getElementById('pageWrapper').style.transform = `translateY(-${(num - 1) * 100}vh)`;
   }
+
+  const blocks = document.querySelectorAll('.info-block');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.2 });
+
+  blocks.forEach(block => observer.observe(block));
+
+  // Puzzle pieces en slide2
+  const puzzleCount = 20;
+  const slide2 = document.getElementById('slide2');
+  const puzzlePieces = [];
+
+  for (let i = 0; i < puzzleCount; i++) {
+    const piece = document.createElement('div');
+    piece.classList.add('puzzle-piece');
+    const size = 30 + Math.random() * 40;
+    piece.style.width = size + 'px';
+    piece.style.height = size + 'px';
+    piece.style.left = Math.random() * 100 + '%';
+    piece.style.top = Math.random() * 100 + '%';
+    slide2.appendChild(piece);
+    puzzlePieces.push(piece);
+  }
+
+  document.addEventListener('mousemove', e => {
+    puzzlePieces.forEach(piece => {
+      const rect = piece.getBoundingClientRect();
+      const dx = e.clientX - (rect.left + rect.width / 2);
+      const dy = e.clientY - (rect.top + rect.height / 2);
+      const distance = Math.sqrt(dx * dx + dy * dy);
+      if (distance < 150) {
+        const angle = Math.atan2(dy, dx);
+        const repelX = Math.cos(angle) * 40;
+        const repelY = Math.sin(angle) * 40;
+        piece.style.transform = `translate(${repelX}px, ${repelY}px)`;
+      } else {
+        piece.style.transform = 'translate(0, 0)';
+      }
+    });
+  });
 </script>
 
 </body>
