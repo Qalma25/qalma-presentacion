@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Qalma · Bienvenida</title>
+  <title>Qalma · Nubes mágicas</title>
   <style>
-    body {
+    html, body {
       margin: 0;
-      background-color: #d9ecff;
-      height: 100vh;
+      padding: 0;
+      background: #d9ecff;
+      height: 100%;
       overflow: hidden;
       position: relative;
     }
@@ -17,73 +18,47 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      z-index: 5;
+      z-index: 2;
       transform: translate(-50%, -50%);
     }
 
     .logo-container img {
-      width: 320px;
+      width: 340px;
     }
 
-    .nube {
+    .nubes {
       position: absolute;
-      background-image: url('nubes.png');
-      background-size: contain;
-      background-repeat: no-repeat;
-      opacity: 0.95;
-      transition: transform 4s ease-out, opacity 3s ease-out;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('nubes.png') center/cover no-repeat;
+      z-index: 3;
+      pointer-events: none;
+
+      /* La parte mágica: máscara circular centrada */
+      -webkit-mask-image: radial-gradient(circle at center, transparent 80px, rgba(0,0,0,1) 180px);
+      mask-image: radial-gradient(circle at center, transparent 80px, rgba(0,0,0,1) 180px);
+      mask-repeat: no-repeat;
+      mask-size: cover;
+      transition: mask-image 2s ease, opacity 3s ease;
     }
 
-    /* Diferentes nubes con tamaños y posiciones */
-    .nube1 {
-      width: 600px;
-      height: 300px;
-      top: 10%;
-      left: -200px;
-    }
-
-    .nube2 {
-      width: 400px;
-      height: 200px;
-      top: 60%;
-      left: 80%;
-    }
-
-    .nube3 {
-      width: 500px;
-      height: 250px;
-      top: 30%;
-      left: 30%;
-    }
-
-    /* Hover mágico que las mueve */
-    body:hover .nube1 {
-      transform: translateX(150%) translateY(-20%) scale(1.1);
-      opacity: 0;
-    }
-
-    body:hover .nube2 {
-      transform: translateX(-120%) translateY(-30%) scale(1.1);
-      opacity: 0;
-    }
-
-    body:hover .nube3 {
-      transform: translateX(80%) translateY(-50%) scale(1.1);
-      opacity: 0;
+    /* OPCIONAL: efecto al pasar el ratón */
+    body:hover .nubes {
+      opacity: 0.4;
     }
   </style>
 </head>
 <body>
 
-  <!-- Logo -->
+  <!-- Logo visible a través del agujero -->
   <div class="logo-container">
     <img src="logo_qalma.png" alt="Logo Qalma">
   </div>
 
-  <!-- Nubes -->
-  <div class="nube nube1"></div>
-  <div class="nube nube2"></div>
-  <div class="nube nube3"></div>
+  <!-- Nube grande cubriendo todo con un hueco central -->
+  <div class="nubes"></div>
 
 </body>
 </html>
