@@ -58,8 +58,20 @@
     }
 
     @media (max-width: 768px) {
+      .logo-container {
+        top: 40%;
+      }
+
+      .logo-container img {
+        width: 260px;
+      }
+
       .video-nubes {
         display: none;
+      }
+
+      .arrow.down {
+        bottom: 80px;
       }
     }
 
@@ -96,17 +108,17 @@
       padding: 100px 20px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
-      color: #2c3e50;
+      text-align: center;
       position: relative;
       overflow: hidden;
+      color: #2c3e50;
     }
 
     .headline {
-      text-align: center;
       font-size: 2.8rem;
-      margin-bottom: 0.5rem;
+      margin-bottom: 1rem;
       z-index: 2;
     }
 
@@ -116,83 +128,55 @@
     }
 
     .quote {
-      text-align: center;
-      font-size: 1.4rem;
       font-style: italic;
+      font-size: 1.3rem;
       color: #666;
-      margin-bottom: 3rem;
-      z-index: 2;
+      margin-bottom: 2.5rem;
     }
 
-    .info-block {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 1s ease;
-      margin-bottom: 60px;
+    .intro-text {
       max-width: 800px;
-      text-align: center;
-      z-index: 2;
-    }
-
-    .info-block.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .info-block h2 {
-      font-size: 1.8rem;
-      margin-bottom: 0.5rem;
-      color: #003366;
-    }
-
-    .info-block p {
       font-size: 1.1rem;
       line-height: 1.6;
       color: #444;
+      margin-bottom: 3rem;
     }
 
-    .final p {
+    .transformacion {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #2c3e50;
+      background: #d9ecff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      margin-bottom: 3rem;
+    }
+
+    .esencia {
       font-size: 1.2rem;
       font-weight: bold;
-      text-align: center;
-      color: #1a1a1a;
-    }
-        .logo-container img {
-      width: 480px;
+      color: #003366;
+      margin-top: 2rem;
     }
 
-    @media (max-width: 768px) {
-          .logo-container img {
-      width: 480px;
+    .puzzle-piece {
+      position: absolute;
+      background-image: url('puzzle.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 0.12;
+      pointer-events: none;
+      z-index: 1;
+      transition: transform 0.3s ease;
+      filter: brightness(0) saturate(100%) invert(34%) sepia(77%) saturate(303%) hue-rotate(175deg) brightness(102%) contrast(92%);
     }
-
-    .arrow.down {
-      bottom: 40px;
-      display: block;
-    }
-
-    @media (max-width: 768px) {
-      .logo-container {
-        top: 40%;
-      }
-      .logo-container img {
-        width: 260px;
-      }
-      .video-nubes {
-        display: none;
-      }
-      .arrow.down {
-        bottom: 80px;
-        display: block;
-      }
-    }
-
-
   </style>
 </head>
 <body>
 
 <div class="wrapper" id="pageWrapper">
+
   <!-- Slide 1 -->
   <section class="slide slide1">
     <div class="logo-container">
@@ -209,40 +193,34 @@
     <div class="arrow up" onclick="scrollToSlide(1)">
       <svg viewBox="0 0 24 24" style="transform: rotate(180deg);"><path d="M12 16.5l-8-8 1.4-1.4L12 13.7l6.6-6.6L20 8.5z"/></svg>
     </div>
-
-    <h1 class="headline">Bienvenidos a <img src="logo_qalma.png" alt="Qalma" class="logo-inline"></h1>
-    <p class="quote">“Lo que crees, creas.”</p>
-
-    <div class="info-block"><h2>Valor con Propósito</h2><p>En un mundo cambiante, creemos que el valor nace del propósito. Qalma acompaña desde 2003 a quienes quieren crecer con impacto.</p></div>
-    <div class="info-block"><h2>No solo facturar</h2><p>Las empresas no están solo para vender, sino para transformar. La sostenibilidad es una forma de pensar, no solo un sello.</p></div>
-    <div class="info-block"><h2>Pequeñas acciones, gran impacto</h2><p>La excelencia se construye en los detalles, en lo invisible, en la coherencia diaria. No en eslóganes vacíos.</p></div>
-    <div class="info-block final"><h2>Qalma es...</h2><p>Calidad con propósito. Estrategia con alma. Acción imperfecta, pero valiente.</p></div>
+    <div class="content-wrapper">
+      <h1 class="headline">Bienvenidos a <img src="logo_qalma.png" alt="Qalma" class="logo-inline"></h1>
+      <p class="quote">“Más de dos décadas trabajando y creciendo en el mundo de la gestión empresarial”</p>
+      <p class="intro-text">
+        En un mundo cambiante, incierto y complejo, creemos firmemente que el valor nace del propósito.
+        Desde 2003, Qalma acompaña a empresas y organizaciones que no solo quieren crecer,
+        sino hacerlo con conciencia, con impacto y con estructura.
+      </p>
+      <div class="transformacion">
+        Porque creemos que las empresas no están solo para facturar, sino para transformar.<br>
+        Que la sostenibilidad no es un sello, sino una forma de pensar.<br>
+        Y que la excelencia se construye desde las pequeñas acciones diarias,
+        no desde grandes eslóganes vacíos.
+      </div>
+      <div class="esencia">
+        Qalma es calidad con propósito. Es estrategia con alma. Es acción imperfecta, pero valiente.
+      </div>
+    </div>
   </section>
+
 </div>
 
 <script>
   function scrollToSlide(num) {
     document.getElementById('pageWrapper').style.transform = `translateY(-${(num - 1) * 100}vh)`;
   }
-</script>
 
-// ... (todo el contenido anterior permanece igual)
-
-<script>
-  function scrollToSlide(num) {
-    document.getElementById('pageWrapper').style.transform = `translateY(-${(num - 1) * 100}vh)`;
-  }
-
-  // Añadir observador para animar bloques
-  const blocks = document.querySelectorAll('.info-block');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add('visible');
-    });
-  }, { threshold: 0.2 });
-  blocks.forEach(block => observer.observe(block));
-
-  // Piezas de puzzle flotantes en slide 2
+  // Piezas de puzzle flotantes
   const puzzleCount = 20;
   const slide2 = document.getElementById('slide2');
   const puzzlePieces = [];
@@ -255,15 +233,6 @@
     piece.style.height = size + 'px';
     piece.style.left = Math.random() * 100 + '%';
     piece.style.top = Math.random() * 100 + '%';
-    piece.style.position = 'absolute';
-    piece.style.backgroundImage = "url('puzzle.png')";
-    piece.style.backgroundSize = 'contain';
-    piece.style.backgroundRepeat = 'no-repeat';
-    piece.style.opacity = '0.12';
-    piece.style.zIndex = '1';
-    piece.style.pointerEvents = 'none';
-    piece.style.transition = 'transform 0.3s ease';
-    piece.style.filter = 'brightness(0) saturate(100%) invert(34%) sepia(77%) saturate(303%) hue-rotate(175deg) brightness(102%) contrast(92%)';
     slide2.appendChild(piece);
     puzzlePieces.push(piece);
   }
@@ -288,4 +257,3 @@
 
 </body>
 </html>
-
