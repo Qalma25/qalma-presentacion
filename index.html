@@ -2,119 +2,51 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Qalma · Calidad con Propósito</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Qalma · Bienvenida</title>
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
+    * {
       margin: 0;
-      background: linear-gradient(to right, #f7f8fa, #e6f0f7);
-      color: #2c3e50;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    .intro-section {
-      padding: 80px 20px;
-      max-width: 1000px;
-      margin: auto;
-      text-align: center;
+    body, html {
+      width: 100%;
+      height: 100%;
+      background: #004c99;
+      overflow: hidden;
     }
 
-    .intro-section h1 {
-      font-size: 3em;
-      font-weight: 700;
+    video.background-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+      opacity: 0.9;
+      mix-blend-mode: screen; /* Puedes probar también overlay, lighten, etc. */
+    }
+
+    .logo-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.9);
+      z-index: 2;
+      animation: zoomIn 2s ease-out forwards;
       opacity: 0;
-      transform: translateY(20px);
-      animation: fadeSlideUp 1s ease forwards;
     }
 
-    .intro-section .quote {
-      margin-top: 20px;
-      font-style: italic;
-      font-size: 1.5em;
-      color: #6c7a89;
-      opacity: 0;
-      animation: fadeIn 2s ease forwards 1s;
+    .logo-container img {
+      width: 240px;
+      mix-blend-mode: lighten;
     }
 
-    .features {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 60px;
-    }
-
-    .feature-box {
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.07);
-      margin: 10px;
-      padding: 30px;
-      flex: 1 1 250px;
-      max-width: 300px;
-      transition: all 0.3s ease;
-      position: relative;
-      cursor: default;
-    }
-
-    .feature-box:hover {
-      transform: scale(1.05);
-      background: #fefefe;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
-    }
-
-    .feature-box h3 {
-      margin-top: 0;
-      color: #2980b9;
-    }
-
-    .feature-box p {
-      color: #555;
-      font-size: 1em;
-    }
-
-    @keyframes fadeSlideUp {
+    @keyframes zoomIn {
       to {
+        transform: translate(-50%, -50%) scale(1);
         opacity: 1;
-        transform: translateY(0);
-      }
-    }
 
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .intro-section h1 {
-        font-size: 2em;
-      }
-
-      .feature-box {
-        max-width: 90%;
-      }
-    }
-  </style>
-</head>
-<body>
-  <section class="intro-section">
-    <h1>Calidad con propósito</h1>
-    <p class="quote">“Lo que crees, creas.”</p>
-
-    <div class="features">
-      <div class="feature-box">
-        <h3>¿Qué hacemos en Qalma?</h3>
-        <p>Transformamos realidades empresariales con consultoría estratégica, acompañamiento humano y herramientas digitales.</p>
-      </div>
-      <div class="feature-box">
-        <h3>Nuestra Diferencia</h3>
-        <p>No competimos por precio. Competimos por valor. Nuestro foco está en dar tranquilidad, claridad y visión.</p>
-      </div>
-      <div class="feature-box">
-        <h3>Compromiso</h3>
-        <p>Con las personas. Con la acción consciente. Con la mejora continua. Con tu propósito, incluso si aún no lo tienes claro.</p>
-      </div>
-    </div>
-  </section>
-</body>
-</html>
