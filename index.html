@@ -14,20 +14,26 @@
     body, html {
       width: 100%;
       height: 100%;
-      background: #004c99;
+      background: #d9ecff; /* azul cielo claro */
       overflow: hidden;
+      position: relative;
     }
 
-    video.background-video {
+    .video-overlay {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    video.background-video {
+      width: 100%;
+      height: 100%;
       object-fit: cover;
-      z-index: 1;
-      opacity: 0.9;
-      mix-blend-mode: screen; /* Puedes probar también overlay, lighten, etc. */
+      mix-blend-mode: screen;
     }
 
     .logo-container {
@@ -35,14 +41,13 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%) scale(0.9);
-      z-index: 2;
+      z-index: 1;
       animation: zoomIn 2s ease-out forwards;
       opacity: 0;
     }
 
     .logo-container img {
-      width: 240px;
-      mix-blend-mode: lighten;
+      width: 320px;
     }
 
     @keyframes zoomIn {
@@ -51,17 +56,24 @@
         opacity: 1;
       }
     }
+
   </style>
 </head>
 <body>
 
-  <!-- VIDEO DE FONDO -->
-  <video class="background-video" src="nubes.mp4" autoplay muted playsinline loop></video>
-
-  <!-- LOGO ANIMADO -->
+  <!-- LOGO -->
   <div class="logo-container">
     <img src="logo_qalma.png" alt="Logo Qalma" />
   </div>
+
+  <!-- VIDEO DE NUBES SOBRE EL LOGO -->
+  <div class="video-overlay">
+    <video class="background-video" src="nubes.mp4" autoplay muted playsinline></video>
+  </div>
+
+</body>
+</html>
+
 
 </body>
 </html>
