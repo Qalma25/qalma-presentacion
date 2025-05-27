@@ -19,6 +19,7 @@
       position: relative;
     }
 
+    /* LOGO (DEBAJO DEL VIDEO) */
     .logo-container {
       position: absolute;
       top: 50%;
@@ -30,19 +31,19 @@
     }
 
     .logo-container img {
-      width: 320px;
+      width: 340px;
     }
 
+    /* VIDEO SÓLIDO ENCIMA */
     .video-overlay {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: 2;
+      z-index: 2; /* encima del logo */
       pointer-events: none;
-      mix-blend-mode: lighten; /* Prueba también screen si este no convence */
-      opacity: 1; /* 100% opaco, no baja visibilidad */
+      opacity: 1;
     }
 
     video.background-video {
@@ -61,12 +62,12 @@
 </head>
 <body>
 
-  <!-- LOGO -->
+  <!-- LOGO CENTRADO -->
   <div class="logo-container">
     <img src="logo_qalma.png" alt="Logo Qalma" />
   </div>
 
-  <!-- VIDEO NUBES ENCIMA -->
+  <!-- VIDEO ENCIMA, OPACO -->
   <div class="video-overlay">
     <video class="background-video" src="nubes.mp4" autoplay muted playsinline></video>
   </div>
