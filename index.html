@@ -8,11 +8,27 @@
     html, body {
       margin: 0;
       padding: 0;
-      width: 100%;
       height: 100%;
       overflow: hidden;
+      font-family: sans-serif;
+    }
+
+    .wrapper {
+      height: 200%;
+      width: 100%;
+      transition: transform 0.8s ease-out;
+    }
+
+    .slide {
+      width: 100%;
+      height: 100vh;
       position: relative;
+    }
+
+    /* Slide 1 */
+    .slide1 {
       background: radial-gradient(circle at center, #ffffff 0%, #d9ecff 100%);
+      overflow: hidden;
     }
 
     .logo-container {
@@ -61,7 +77,7 @@
     .arrow svg {
       width: 40px;
       height: 40px;
-      fill: white;
+      fill: #444444;
     }
 
     @keyframes bounce {
@@ -72,24 +88,75 @@
         transform: translateX(-50%) translateY(10px);
       }
     }
+
+    /* Slide 2 */
+    .slide2 {
+      background-color: white;
+      padding: 80px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #2c3e50;
+    }
+
+    .slide2 h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .slide2 blockquote {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: #888;
+      margin-bottom: 2rem;
+    }
+
+    .slide2 p {
+      max-width: 800px;
+      line-height: 1.6;
+      font-size: 1.1rem;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
 
-  <!-- Logo centrado con zoom-in lento -->
-  <div class="logo-container">
-    <img src="logo_qalma.png" alt="Logo Qalma">
-  </div>
+<div class="wrapper" id="pageWrapper">
 
-  <!-- Video de nubes por encima -->
-  <video class="video-nubes" src="nubes2.webm" autoplay muted playsinline></video>
+  <!-- Slide 1 -->
+  <section class="slide slide1">
+    <div class="logo-container">
+      <img src="logo_qalma.png" alt="Logo Qalma">
+    </div>
+    <video class="video-nubes" src="nubes2.webm" autoplay muted playsinline></video>
+    <div class="arrow" onclick="scrollToSlide2()">
+      <svg viewBox="0 0 24 24"><path d="M12 16.5l-8-8 1.4-1.4L12 13.7l6.6-6.6L20 8.5z"/></svg>
+    </div>
+  </section>
 
-  <!-- Flecha blanca hacia abajo -->
-  <div class="arrow" onclick="window.location.href='otra-pagina.html'">
-    <svg viewBox="0 0 24 24"><path d="M12 16.5l-8-8 1.4-1.4L12 13.7l6.6-6.6L20 8.5z"/></svg>
-  </div>
+  <!-- Slide 2 -->
+  <section class="slide slide2">
+    <h1>Bienvenidos a Qalma</h1>
+    <blockquote>“Lo que crees, creas.”</blockquote>
+    <p>
+      En un mundo cambiante, incierto y complejo, creemos firmemente que el valor nace del propósito.  
+      Desde 2003, Qalma acompaña a empresas y organizaciones que no solo quieren crecer, sino hacerlo con conciencia, con impacto y con estructura.  
+      <br><br>
+      Porque creemos que las empresas no están solo para facturar, sino para transformar. Que la sostenibilidad no es un sello, sino una forma de pensar.  
+      Y que la excelencia se construye desde las pequeñas acciones diarias, no desde grandes eslóganes vacíos.  
+      <br><br>
+      <strong>Qalma es calidad con propósito. Es estrategia con alma. Es acción imperfecta, pero valiente.</strong>
+    </p>
+  </section>
+
+</div>
+
+<script>
+  function scrollToSlide2() {
+    document.getElementById('pageWrapper').style.transform = 'translateY(-100vh)';
+  }
+</script>
 
 </body>
 </html>
-
-
