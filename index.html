@@ -8,23 +8,33 @@
     html, body {
       margin: 0;
       padding: 0;
-      background: #d9ecff;
       width: 100%;
       height: 100%;
       overflow: hidden;
       position: relative;
+      background: radial-gradient(circle at center, #ffffff 0%, #d9ecff 100%);
     }
 
     .logo-container {
       position: absolute;
-      top: 50%;
+      top: 45%;
       left: 50%;
       transform: translate(-50%, -50%);
       z-index: 1;
+      animation: zoomSlow 60s ease-in-out infinite;
     }
 
     .logo-container img {
-      width: 360px;
+      width: 480px;
+    }
+
+    @keyframes zoomSlow {
+      0% {
+        transform: translate(-50%, -50%) scale(1);
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1.08);
+      }
     }
 
     .video-nubes {
@@ -37,17 +47,47 @@
       z-index: 2;
       pointer-events: none;
     }
+
+    .arrow {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      cursor: pointer;
+      animation: bounce 2s infinite;
+    }
+
+    .arrow svg {
+      width: 40px;
+      height: 40px;
+      fill: white;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateX(-50%) translateY(0);
+      }
+      50% {
+        transform: translateX(-50%) translateY(10px);
+      }
+    }
   </style>
 </head>
 <body>
 
-  <!-- LOGO CENTRADO -->
+  <!-- Logo centrado con zoom-in lento -->
   <div class="logo-container">
     <img src="logo_qalma.png" alt="Logo Qalma">
   </div>
 
-  <!-- VIDEO TRANSPARENTE ENCIMA -->
+  <!-- Video de nubes por encima -->
   <video class="video-nubes" src="nubes2.webm" autoplay muted playsinline></video>
+
+  <!-- Flecha blanca hacia abajo -->
+  <div class="arrow" onclick="window.location.href='otra-pagina.html'">
+    <svg viewBox="0 0 24 24"><path d="M12 16.5l-8-8 1.4-1.4L12 13.7l6.6-6.6L20 8.5z"/></svg>
+  </div>
 
 </body>
 </html>
