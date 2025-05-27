@@ -195,5 +195,66 @@
   }
 </script>
 
+// ... (todo el contenido anterior permanece igual)
+
+<script>
+  function scrollToSlide(num) {
+    document.getElementById('pageWrapper').style.transform = `translateY(-${(num - 1) * 100}vh)`;
+  }
+
+  // Añadir observador para animar bloques
+  const blocks = document.querySelectorAll('.info-block');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.2 });
+  blocks.forEach(block => observer.observe(block));
+
+  // Piezas de puzzle flotantes en slide 2
+  const puzzleCount = 20;
+  const slide2 = document.getElementById('slide2');
+  const puzzlePieces = [];
+
+  for (let i = 0; i < puzzleCount; i++) {
+    const piece = document.createElement('div');
+    piece.classList.add('puzzle-piece');
+    const size = 30 + Math.random() * 40;
+    piece.style.width = size + 'px';
+    piece.style.height = size + 'px';
+    piece.style.left = Math.random() * 100 + '%';
+    piece.style.top = Math.random() * 100 + '%';
+    piece.style.position = 'absolute';
+    piece.style.backgroundImage = "url('puzzle.png')";
+    piece.style.backgroundSize = 'contain';
+    piece.style.backgroundRepeat = 'no-repeat';
+    piece.style.opacity = '0.12';
+    piece.style.zIndex = '1';
+    piece.style.pointerEvents = 'none';
+    piece.style.transition = 'transform 0.3s ease';
+    piece.style.filter = 'brightness(0) saturate(100%) invert(34%) sepia(77%) saturate(303%) hue-rotate(175deg) brightness(102%) contrast(92%)';
+    slide2.appendChild(piece);
+    puzzlePieces.push(piece);
+  }
+
+  document.addEventListener('mousemove', e => {
+    puzzlePieces.forEach(piece => {
+      const rect = piece.getBoundingClientRect();
+      const dx = e.clientX - (rect.left + rect.width / 2);
+      const dy = e.clientY - (rect.top + rect.height / 2);
+      const distance = Math.sqrt(dx * dx + dy * dy);
+      if (distance < 150) {
+        const angle = Math.atan2(dy, dx);
+        const repelX = Math.cos(angle) * 40;
+        const repelY = Math.sin(angle) * 40;
+        piece.style.transform = `translate(${repelX}px, ${repelY}px)`;
+      } else {
+        piece.style.transform = 'translate(0, 0)';
+      }
+    });
+  });
+</script>
+
 </body>
 </html>
+
