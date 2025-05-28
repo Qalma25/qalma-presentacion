@@ -257,6 +257,56 @@ button {
     height: 32px;
   }
 }
+
+@media (max-width: 768px) {
+  .slide2 {
+    padding: 60px 16px 140px;
+    overflow-y: auto;
+    height: auto;
+    max-height: none;
+  }
+
+  .headline {
+    font-size: 1.6rem;
+  }
+
+  .intro-text,
+  .highlight-box {
+    font-size: 1rem;
+    padding: 1rem;
+    max-width: 100%;
+  }
+
+  .pillars {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .pillar {
+    max-width: 100%;
+    font-size: 1rem;
+  }
+
+  .timeline {
+    flex-direction: column;
+    gap: 16px;
+    max-width: 100%;
+  }
+
+  .timeline::before {
+    display: none;
+  }
+
+  .logo-year img {
+    height: 48px;
+  }
+
+  .highlight-box {
+    box-sizing: border-box;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -280,7 +330,7 @@ button {
       <div class="logo-year"><img src="qalma-2011.png" alt="2011"/><span>2011</span></div>
       <div class="logo-year"><img src="QALMA_2019.png" alt="2019"/><span>2019</span></div>
     </div>
-    <p class="intro-text">En un mundo cambiante, incierto y complejo...</p>
+    <p class="intro-text">En un mundo cambiante, incierto y complejo, creemos firmemente que el valor nace del propósito. Desde 2003, Qalma acompaña a empresas y organizaciones que no solo quieren crecer, sino hacerlo con conciencia, con impacto y con estructura.</p>
     <div class="highlight-box">La excelencia se construye desde las pequeñas acciones diarias.</div>
     <div class="pillars">
       <div class="pillar"><img src="servicio-de-calidad.png" alt="Calidad"/><br/>Calidad con propósito.</div>
@@ -319,5 +369,50 @@ button {
 
   window.addEventListener('load', checkSlide);
 </script>
+
+<script>
+  const puzzleCount = 20;
+  const slide2 = document.getElementById('slide2');
+  const puzzlePieces = [];
+
+  for (let i = 0; i < puzzleCount; i++) {
+    const piece = document.createElement('div');
+    piece.classList.add('puzzle-piece');
+    const size = 30 + Math.random() * 40;
+    piece.style.width = size + 'px';
+    piece.style.height = size + 'px';
+    piece.style.left = Math.random() * 100 + '%';
+    piece.style.top = Math.random() * 100 + '%';
+    piece.style.position = 'absolute';
+    piece.style.backgroundImage = "url('puzzle.png')";
+    piece.style.backgroundSize = 'contain';
+    piece.style.backgroundRepeat = 'no-repeat';
+    piece.style.opacity = '0.1';
+    piece.style.pointerEvents = 'none';
+    piece.style.zIndex = '0';
+    piece.style.transition = 'transform 0.3s ease';
+    piece.style.filter = 'brightness(0) saturate(100%) invert(34%) sepia(77%) saturate(303%) hue-rotate(175deg) brightness(102%) contrast(92%)';
+    slide2.appendChild(piece);
+    puzzlePieces.push(piece);
+  }
+
+  document.addEventListener('mousemove', e => {
+    puzzlePieces.forEach(piece => {
+      const rect = piece.getBoundingClientRect();
+      const dx = e.clientX - (rect.left + rect.width / 2);
+      const dy = e.clientY - (rect.top + rect.height / 2);
+      const distance = Math.sqrt(dx * dx + dy * dy);
+      if (distance < 150) {
+        const angle = Math.atan2(dy, dx);
+        const repelX = Math.cos(angle) * 40;
+        const repelY = Math.sin(angle) * 40;
+        piece.style.transform = `translate(${repelX}px, ${repelY}px)`;
+      } else {
+        piece.style.transform = 'translate(0, 0)';
+      }
+    });
+  });
+</script>
 </body>
+
 </html>
