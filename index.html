@@ -1,11 +1,12 @@
 
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Qalma · Presentación</title>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Qalma · Presentación</title>
+<style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
 
     html, body {
@@ -132,6 +133,10 @@
 
     .logo-year img {
       height: 60px;
+      transition: transform 0.3s ease;
+    }
+    .logo-year img:hover {
+      transform: scale(1.4);
     }
 
     .logo-year span {
@@ -203,55 +208,66 @@
 </style>
 </head>
 <body>
-
 <div class="wrapper" id="pageWrapper">
-
-  <!-- Slide 1 -->
-  <section class="slide slide1">
-    <div class="logo-container">
-      <img src="logo_qalma.png" alt="Logo Qalma">
-    </div>
-    <video class="video-nubes" src="nubes2.webm" autoplay muted playsinline></video>
-    <div class="arrow down" onclick="document.getElementById('pageWrapper').style.transform = 'translateY(-100vh)'">
-      <svg viewBox="0 0 24 24"><path d="M12 16.5l-8-8 1.4-1.4L12 13.7l6.6-6.6L20 8.5z"/></svg>
-    </div>
-  </section>
-
-  <!-- Slide 2 -->
-  <section class="slide slide2" id="slide2">
-    <div class="arrow up" onclick="document.getElementById('pageWrapper').style.transform = 'translateY(0)'">
-      <svg viewBox="0 0 24 24" style="transform: rotate(180deg);"><path d="M12 16.5l-8-8 1.4-1.4L12 13.7l6.6-6.6L20 8.5z"/></svg>
-    </div>
-
-    <h1 class="headline">Bienvenidos a Qalma</h1>
-
-    <div class="timeline">
-      <div class="logo-year"><img src="qalma-2003.png" alt="2003"><span>2003</span></div>
-      <div class="logo-year"><img src="qalma-2004.png" alt="2004"><span>2004</span></div>
-      <div class="logo-year"><img src="qalma-2006.png" alt="2006"><span>2006</span></div>
-      <div class="logo-year"><img src="qalma-2011.png" alt="2011"><span>2011</span></div>
-      <div class="logo-year"><img src="QALMA_2019.png" alt="2019"><span>2019</span></div>
-    </div>
-
-    <p class="intro-text">
+<!-- Slide 1 -->
+<section class="slide slide1">
+<div class="logo-container">
+<img alt="Logo Qalma" src="logo_qalma.png"/>
+</div>
+<video autoplay="" class="video-nubes" muted="" playsinline="" src="nubes2.webm"></video>
+<div class="arrow down" onclick="document.getElementById('pageWrapper').style.transform = 'translateY(-100vh)'">
+<svg viewbox="0 0 24 24"><path d="M12 16.5l-8-8 1.4-1.4L12 13.7l6.6-6.6L20 8.5z"></path></svg>
+</div>
+<div class="arrow down" onclick="document.getElementById('pageWrapper').style.transform = 'translateY(-100vh)'">
+<svg viewbox="0 0 24 24"><path d="M12 16.5l-8-8 1.4-1.4L12 13.7l6.6-6.6L20 8.5z"></path></svg>
+</div>
+<div class="arrow down" onclick="document.getElementById('pageWrapper').style.transform = 'translateY(-100vh)'" style="bottom: 20px;">
+<svg viewbox="0 0 24 24"><path d="M12 16.5l-8-8 1.4-1.4L12 13.7l6.6-6.6L20 8.5z"></path></svg>
+</div>
+</section>
+<!-- Slide 2 -->
+<section class="slide slide2" id="slide2">
+<div class="arrow up" onclick="document.getElementById('pageWrapper').style.transform = 'translateY(0)'">
+<svg style="transform: rotate(180deg);" viewbox="0 0 24 24"><path d="M12 16.5l-8-8 1.4-1.4L12 13.7l6.6-6.6L20 8.5z"></path></svg>
+</div>
+<h1 class="headline">Bienvenidos a Qalma</h1>
+<div class="timeline">
+<div class="logo-year"><img alt="2003" src="qalma-2003.png"/><span>2003</span></div>
+<div class="logo-year"><img alt="2004" src="qalma-2004.png"/><span>2004</span></div>
+<div class="logo-year"><img alt="2006" src="qalma-2006.png"/><span>2006</span></div>
+<div class="logo-year"><img alt="2011" src="qalma-2011.png"/><span>2011</span></div>
+<div class="logo-year"><img alt="2019" src="QALMA_2019.png"/><span>2019</span></div>
+</div>
+<p class="intro-text">
       En un mundo cambiante, incierto y complejo, creemos firmemente que el valor nace del propósito.
       Desde 2003, Qalma acompaña a empresas y organizaciones que no solo quieren crecer,
       sino hacerlo con conciencia, con impacto y con estructura.
     </p>
-
-    <div class="highlight-box">
+<div class="highlight-box">
       La excelencia se construye desde las pequeñas acciones diarias, no desde grandes eslóganes vacíos.
     </div>
-
-    <h2 class="qalma-es">Qalma es...</h2>
 <div class="pillars">
-      <div class="pillar"><img src="servicio-de-calidad.png" alt="Icono calidad"><br>Calidad con propósito.</div>
-      <div class="pillar"><img src="analisis.png" alt="Icono estrategia"><br>Estrategia con alma.</div>
-      <div class="pillar"><img src="plan-de-accion.png" alt="Icono acción"><br>Acción imperfecta, pero valiente.</div>
-    </div>
-  </section>
+<div class="pillar"><img alt="Icono calidad" src="servicio-de-calidad.png"/><br/>Calidad con propósito.</div>
+<div class="pillar"><img alt="Icono estrategia" src="analisis.png"/><br/>Estrategia con alma.</div>
+<div class="pillar"><img alt="Icono acción" src="plan-de-accion.png"/><br/>Acción imperfecta, pero valiente.</div>
+</div>
+<div style="margin-top: 40px;">
+<button onclick="document.body.style.transition = 'opacity 0.6s ease'; document.body.style.opacity = 0; setTimeout(() =&gt; { window.location.href = 'https://qalma25.github.io/que-hacemos/'; }, 600);" style="background-color: #003366; color: white; border: none; padding: 12px 24px; border-radius: 50px; font-size: 1rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 10px;">
+    Siguiente
+    <svg fill="white" height="20" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M12 4l1.41 1.41L7.83 11H20v2H7.83l5.58 5.59L12 20l-8-8z"></path></svg>
+</button>
 </div>
 
+<div style="margin-top: 40px;">
+</div>
+<div class="arrow down" onclick="document.getElementById('pageWrapper').style.transform = 'translateY(-100vh)'">
+<svg viewbox="0 0 24 24"><path d="M12 16.5l-8-8 1.4-1.4L12 13.7l6.6-6.6L20 8.5z"></path></svg>
+</div>
+<div class="arrow down" onclick="document.getElementById('pageWrapper').style.transform = 'translateY(-100vh)'">
+<svg viewbox="0 0 24 24"><path d="M12 16.5l-8-8 1.4-1.4L12 13.7l6.6-6.6L20 8.5z"></path></svg>
+</div>
+</section>
+</div>
 <script>
   // Piezas flotantes
   const puzzleCount = 20;
@@ -287,6 +303,5 @@
     });
   });
 </script>
-
 </body>
 </html>
