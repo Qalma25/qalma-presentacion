@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -57,24 +58,6 @@
       pointer-events: none;
     }
 
-    @media (max-width: 768px) {
-      .logo-container {
-        top: 40%;
-      }
-
-      .logo-container img {
-        width: 260px;
-      }
-
-      .video-nubes {
-        display: none;
-      }
-
-      .arrow.down {
-        bottom: 80px;
-      }
-    }
-
     .arrow {
       position: absolute;
       left: 50%;
@@ -90,13 +73,8 @@
       fill: #444444;
     }
 
-    .arrow.down {
-      bottom: 40px;
-    }
-
-    .arrow.up {
-      top: 40px;
-    }
+    .arrow.down { bottom: 40px; }
+    .arrow.up { top: 40px; }
 
     @keyframes bounce {
       0%, 100% { transform: translateX(-50%) translateY(0); }
@@ -105,59 +83,102 @@
 
     .slide2 {
       background-color: #ffffff;
-      padding: 100px 20px;
+      padding: 80px 20px;
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
       align-items: center;
       text-align: center;
       position: relative;
-      overflow: hidden;
-      color: #2c3e50;
+      overflow-y: auto;
     }
 
     .headline {
-      font-size: 2.8rem;
+      font-size: 2.6rem;
       margin-bottom: 1rem;
-      z-index: 2;
+      font-weight: 700;
+      color: #003366;
     }
 
-    .logo-inline {
-      height: 1.4em;
-      vertical-align: middle;
+    .timeline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 2rem 0 4rem;
+      position: relative;
+      width: 100%;
+      max-width: 1000px;
+      overflow: visible;
+      padding: 0;
     }
 
-    .quote {
-      font-style: italic;
-      font-size: 1.3rem;
-      color: #666;
-      margin-bottom: 2.5rem;
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 60px;
+      right: 60px;
+      height: 4px;
+      background: #003366;
+      transform-origin: left;
+      transform: scaleX(1);
+      z-index: 0;
+    }
+
+    .logo-year {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .logo-year img {
+      height: 60px;
+    }
+
+    .logo-year span {
+      display: block;
+      margin-top: 0.5rem;
+      color: #003366;
+      font-weight: 600;
     }
 
     .intro-text {
       max-width: 800px;
       font-size: 1.1rem;
       line-height: 1.6;
-      color: #444;
-      margin-bottom: 3rem;
+      color: #333;
+      margin: 3rem 0;
+      z-index: 2;
     }
 
-    .transformacion {
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: #2c3e50;
+    .highlight-box {
       background: #d9ecff;
-      padding: 20px;
+      padding: 1.5rem;
+      max-width: 800px;
       border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-      margin-bottom: 3rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #003366;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      z-index: 2;
     }
 
-    .esencia {
-      font-size: 1.2rem;
-      font-weight: bold;
-      color: #003366;
-      margin-top: 2rem;
+    .pillars {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 3rem;
+      z-index: 2;
+    }
+
+    .pillar {
+      background: #f1f5fa;
+      border-radius: 8px;
+      padding: 1rem 1.5rem;
+      max-width: 250px;
+      font-weight: 600;
+      color: #2a2a2a;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
 
     .puzzle-piece {
@@ -165,32 +186,21 @@
       background-image: url('puzzle.png');
       background-size: contain;
       background-repeat: no-repeat;
-      opacity: 0.12;
+      opacity: 0.1;
       pointer-events: none;
-      z-index: 1;
+      z-index: 0;
       transition: transform 0.3s ease;
       filter: brightness(0) saturate(100%) invert(34%) sepia(77%) saturate(303%) hue-rotate(175deg) brightness(102%) contrast(92%);
     }
-    .logo-carousel {
-  position: relative;
-  width: 220px;
-  height: 100px;
-  margin: 20px auto;
-}
-.carousel-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: auto;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-}
-.carousel-img.active {
-  opacity: 1;
-}
+    .pillar img {
+        width: 32px;
+        height: 32px;
+        margin-bottom: 10px;
+        
+    }
 
-  </style>
+  }
+</style>
 </head>
 <body>
 
@@ -198,55 +208,52 @@
 
   <!-- Slide 1 -->
   <section class="slide slide1">
-  <div class="logo-container">
-    <img src="logo_qalma.png" alt="Logo Qalma">
-  </div>
-  <video class="video-nubes" src="nubes2.webm" autoplay muted playsinline></video>
-  <div class="arrow down" onclick="scrollToSlide(2)">
-    <svg viewBox="0 0 24 24"><path d="M12 16.5l-8-8 1.4-1.4L12 13.7l6.6-6.6L20 8.5z"/></svg>
-  </div>
-</section>
+    <div class="logo-container">
+      <img src="logo_qalma.png" alt="Logo Qalma">
+    </div>
+    <video class="video-nubes" src="nubes2.webm" autoplay muted playsinline></video>
+    <div class="arrow down" onclick="document.getElementById('pageWrapper').style.transform = 'translateY(-100vh)'">
+      <svg viewBox="0 0 24 24"><path d="M12 16.5l-8-8 1.4-1.4L12 13.7l6.6-6.6L20 8.5z"/></svg>
+    </div>
+  </section>
 
-<section class="slide slide2" id="slide2">
-  <div class="arrow up" onclick="scrollToSlide(1)">
-    <svg viewBox="0 0 24 24" style="transform: rotate(180deg);"><path d="M12 16.5l-8-8 1.4-1.4L12 13.7l6.6-6.6L20 8.5z"/></svg>
-  </div>
-  <div class="content-wrapper">
-    <h1 class="headline">Bienvenidos a <img src="logo_qalma.png" alt="Qalma" class="logo-inline"></h1>
-    
-<div class="logo-carousel">
-  <img src="qalma-2003.png" class="carousel-img active" alt="Qalma 2003">
-  <img src="qalma-2004.png" class="carousel-img" alt="Qalma 2004">
-  <img src="qalma-2006.png" class="carousel-img" alt="Qalma 2006">
-  <img src="qalma-2011.png" class="carousel-img" alt="Qalma 2011">
-  <img src="QALMA_2019.png" class="carousel-img" alt="Qalma 2019">
-</div>
+  <!-- Slide 2 -->
+  <section class="slide slide2" id="slide2">
+    <div class="arrow up" onclick="document.getElementById('pageWrapper').style.transform = 'translateY(0)'">
+      <svg viewBox="0 0 24 24" style="transform: rotate(180deg);"><path d="M12 16.5l-8-8 1.4-1.4L12 13.7l6.6-6.6L20 8.5z"/></svg>
+    </div>
+
+    <h1 class="headline">Bienvenidos a Qalma</h1>
+
+    <div class="timeline">
+      <div class="logo-year"><img src="qalma-2003.png" alt="2003"><span>2003</span></div>
+      <div class="logo-year"><img src="qalma-2004.png" alt="2004"><span>2004</span></div>
+      <div class="logo-year"><img src="qalma-2006.png" alt="2006"><span>2006</span></div>
+      <div class="logo-year"><img src="qalma-2011.png" alt="2011"><span>2011</span></div>
+      <div class="logo-year"><img src="QALMA_2019.png" alt="2019"><span>2019</span></div>
+    </div>
+
     <p class="intro-text">
       En un mundo cambiante, incierto y complejo, creemos firmemente que el valor nace del propósito.
       Desde 2003, Qalma acompaña a empresas y organizaciones que no solo quieren crecer,
       sino hacerlo con conciencia, con impacto y con estructura.
     </p>
-    <div class="transformacion">
-      Porque creemos que las empresas no están solo para facturar, sino para transformar.<br>
-      Que la sostenibilidad no es un sello, sino una forma de pensar.<br>
-      Y que la excelencia se construye desde las pequeñas acciones diarias,
-      no desde grandes eslóganes vacíos.
-    </div>
-    <div class="esencia">
-      Qalma es calidad con propósito. Es estrategia con alma. Es acción imperfecta, pero valiente.
-    </div>
-  </div>
-</section>
 
+    <div class="highlight-box">
+      La excelencia se construye desde las pequeñas acciones diarias, no desde grandes eslóganes vacíos.
+    </div>
 
+    <h2 class="qalma-es">Qalma es...</h2>
+<div class="pillars">
+      <div class="pillar"><img src="servicio-de-calidad.png" alt="Icono calidad"><br>Calidad con propósito.</div>
+      <div class="pillar"><img src="analisis.png" alt="Icono estrategia"><br>Estrategia con alma.</div>
+      <div class="pillar"><img src="plan-de-accion.png" alt="Icono acción"><br>Acción imperfecta, pero valiente.</div>
+    </div>
+  </section>
 </div>
 
 <script>
-  function scrollToSlide(num) {
-    document.getElementById('pageWrapper').style.transform = `translateY(-${(num - 1) * 100}vh)`;
-  }
-
-  // Piezas de puzzle flotantes
+  // Piezas flotantes
   const puzzleCount = 20;
   const slide2 = document.getElementById('slide2');
   const puzzlePieces = [];
@@ -280,16 +287,6 @@
     });
   });
 </script>
-  <script>
-  let current = 0;
-  const images = document.querySelectorAll('.carousel-img');
-  setInterval(() => {
-    images[current].classList.remove('active');
-    current = (current + 1) % images.length;
-    images[current].classList.add('active');
-  }, 2500);
-</script>
-
 
 </body>
 </html>
