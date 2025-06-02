@@ -1,0 +1,189 @@
+<!-- Slide: Nuestros Servicios - Qalma -->
+<section class="slide servicios">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100%;
+      font-family: 'Montserrat', sans-serif;
+      background: #ffffff;
+    }
+
+    .slide.servicios {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+      box-sizing: border-box;
+      z-index: 1;
+    }
+
+    .slide.servicios::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255,255,255,0.95);
+      z-index: -1;
+    }
+
+    .video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -2;
+    }
+
+    .servicios h2 {
+      font-size: 2.2rem;
+      color: #0a2458;
+      margin-bottom: 1.5rem;
+    }
+
+    .servicios p.subtitle {
+      font-size: 1.1rem;
+      margin-bottom: 2.5rem;
+      color: #333;
+      font-style: italic;
+      max-width: 800px;
+    }
+
+    .cards {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      gap: 2rem;
+      width: 100%;
+      max-width: 1100px;
+    }
+
+    .card {
+      background: #f5f9ff;
+      border: 1px dashed #d2e4f7;
+      border-radius: 1rem;
+      padding: 2rem 1.5rem;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+      width: 100%;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      color: #0a2458;
+      margin-bottom: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      position: relative;
+    }
+
+    .card h3::after {
+      content: "";
+      position: absolute;
+      bottom: -0.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 3px;
+      background: #0a2458;
+      border-radius: 2px;
+    }
+
+    .card ul {
+      list-style: none;
+      padding: 0;
+      font-size: 0.95rem;
+      color: #333;
+      margin-top: 1.5rem;
+      text-align: left;
+    }
+
+    .card ul li {
+      margin-bottom: 0.6rem;
+      line-height: 1.5;
+      position: relative;
+      padding-left: 1rem;
+    }
+
+    .card ul li::before {
+      content: "\2022";
+      position: absolute;
+      left: 0;
+      color: #0a2458;
+      font-size: 1rem;
+      line-height: 1;
+    }
+
+    .emoji {
+      font-size: 1.4rem;
+    }
+
+    @media (max-width: 960px) {
+      .cards {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+
+  <video autoplay muted loop playsinline class="video-background">
+    <source src="https://qalma25.github.io/qalma-presentacion/servicios.mp4" type="video/mp4">
+  </video>
+
+  <h2>💼 Nuestros Servicios</h2>
+  <p class="subtitle">En Qalma, todo está diseñado para acompañarte en tu crecimiento con estructura y alma.</p>
+
+  <div class="cards">
+    <div class="card">
+      <h3><span class="emoji">🔧</span> Consultoría Estratégica</h3>
+      <ul>
+        <li>Sistemas de Gestión (ISO 9001, 14001, 45001, 27001…)</li>
+        <li>Sostenibilidad y RSC</li>
+        <li>Protección de Datos (RGPD)</li>
+        <li>Mejora continua</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><span class="emoji">🧭</span> Formación y Capacitación</h3>
+      <ul>
+        <li>Formación accionable</li>
+        <li>Programas aplicables desde el primer día</li>
+        <li>Competencias VUCA y BANI</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><span class="emoji">💻</span> Digitalización Eficiente</h3>
+      <ul>
+        <li>QalmaNet: planifica, mide, mejora</li>
+        <li>Herramientas adaptadas a cada cliente</li>
+        <li>Enfoque humano</li>
+      </ul>
+    </div>
+  </div>
+</section>
