@@ -1,0 +1,131 @@
+<!-- Slide: Sostenibilidad - Qalma -->
+<section class="slide sostenibilidad">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100%;
+      font-family: 'Montserrat', sans-serif;
+      background: #ffffff;
+    }
+
+    .slide.sostenibilidad {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: linear-gradient(135deg, #e4f7ec, #f7fdf8);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 3rem 2rem;
+      box-sizing: border-box;
+    }
+
+    .sostenibilidad h2 {
+      font-size: 2.4rem;
+      color: #1d5942;
+      margin-bottom: 1.5rem;
+      animation: fadeInDown 0.8s ease-out;
+    }
+
+    .sostenibilidad .intro {
+      font-size: 1.2rem;
+      max-width: 850px;
+      color: #2e3d31;
+      margin-bottom: 2rem;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .acciones {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      max-width: 800px;
+      width: 100%;
+      animation: fadeInUp 1.2s ease-out;
+    }
+
+    .acciones .item {
+      background: #ffffff;
+      border-left: 5px solid #6fc08e;
+      padding: 1.3rem 1.6rem;
+      border-radius: 0.75rem;
+      text-align: left;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+      font-size: 1.05rem;
+      color: #2c4a3e;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUpItem 0.6s ease forwards;
+    }
+
+    .acciones .item:nth-child(1) { animation-delay: 0.5s; }
+    .acciones .item:nth-child(2) { animation-delay: 0.8s; }
+    .acciones .item:nth-child(3) { animation-delay: 1.1s; }
+
+    .acciones .item::before {
+      content: '🌿';
+      margin-right: 0.5rem;
+    }
+
+    .cierre {
+      margin-top: 2rem;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: #345b48;
+      max-width: 700px;
+      animation: fadeInUp 1.5s ease-out;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUpItem {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .sostenibilidad h2 {
+        font-size: 1.8rem;
+      }
+      .intro, .cierre {
+        font-size: 1rem;
+      }
+      .acciones .item {
+        font-size: 1rem;
+      }
+    }
+  </style>
+
+  <h2>🌍 Sostenibilidad: nuestro compromiso</h2>
+  <p class="intro">
+    En Qalma, no hablamos de sostenibilidad como moda.<br>
+    La entendemos como responsabilidad, coherencia y estrategia.
+  </p>
+
+  <div class="acciones">
+    <div class="item">Calculamos tu huella de carbono</div>
+    <div class="item">Te ayudamos a reducirla con acciones reales</div>
+    <div class="item">Te acompañamos hacia certificaciones con sentido (Biosphere, ISO, ODS…)</div>
+  </div>
+
+  <p class="cierre">
+    Porque un negocio sostenible no es solo el que cuida el planeta,<br>
+    sino el que cuida también de sí mismo y de las personas que lo hacen posible.
+  </p>
+</section>
