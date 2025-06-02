@@ -1,0 +1,101 @@
+<!-- Slide: Resultados que importan - Qalma -->
+<section class="slide resultados">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100%;
+      font-family: 'Montserrat', sans-serif;
+      background: #ffffff;
+    }
+
+    .slide.resultados {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: linear-gradient(135deg, #f5faff, #e6f2ff);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 3rem 2rem;
+      box-sizing: border-box;
+    }
+
+    .resultados h2 {
+      font-size: 2.5rem;
+      color: #0a2458;
+      margin-bottom: 2rem;
+      animation: fadeInDown 1s ease-out;
+    }
+
+    .highlight {
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+      max-width: 850px;
+      width: 100%;
+    }
+
+    .highlight .item {
+      background: #ffffff;
+      border-left: 5px solid #31a4cf;
+      border-radius: 0.75rem;
+      padding: 1.4rem 1.8rem;
+      text-align: left;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #2b2b2b;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: riseIn 0.6s ease forwards;
+    }
+
+    .highlight .item:nth-child(1) { animation-delay: 0.4s; }
+    .highlight .item:nth-child(2) { animation-delay: 0.7s; }
+    .highlight .item:nth-child(3) { animation-delay: 1.0s; }
+    .highlight .item:nth-child(4) { animation-delay: 1.3s; }
+
+    .highlight .item::before {
+      content: '💡';
+      margin-right: 0.6rem;
+      color: #31a4cf;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes riseIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .resultados h2 {
+        font-size: 1.8rem;
+      }
+
+      .highlight .item {
+        font-size: 1rem;
+        padding: 1rem 1.2rem;
+      }
+    }
+  </style>
+
+  <h2>📈 Resultados que importan</h2>
+  <div class="highlight">
+    <div class="item">Más de 20 años transformando organizaciones</div>
+    <div class="item">Decenas de empresas certificadas, y —más importante— satisfechas</div>
+    <div class="item">Formación con impacto directo en la operativa diaria</div>
+    <div class="item">Plataformas digitales que ordenan, miden y liberan tiempo</div>
+  </div>
+</section>
