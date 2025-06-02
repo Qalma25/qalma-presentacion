@@ -77,7 +77,7 @@
     .arrow.up { top: 40px; }
 
     #flechaAbajo {
-      display: flex !important; /* Fuerza visibilidad inicial */
+      display: flex !important;
     }
 
     @keyframes bounce {
@@ -302,6 +302,24 @@
     flechaArriba.addEventListener('click', () => goToSlide(1));
 
     window.addEventListener('load', () => goToSlide(1));
+
+    // Swipe móvil
+    let touchStartY = 0;
+    let touchEndY = 0;
+
+    document.addEventListener('touchstart', e => {
+      touchStartY = e.changedTouches[0].screenY;
+    });
+
+    document.addEventListener('touchend', e => {
+      touchEndY = e.changedTouches[0].screenY;
+      const delta = touchStartY - touchEndY;
+
+      if (Math.abs(delta) < 50) return; // evitar gestos pequeños
+
+      if (delta > 0 && currentSlide === 1) goToSlide(2);      // Swipe arriba
+      if (delta < 0 && currentSlide === 2) goToSlide(1);      // Swipe abajo
+    });
   </script>
 </body>
 </html>
