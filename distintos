@@ -1,0 +1,125 @@
+<!-- Slide: ¿Qué nos hace distintos? - Qalma -->
+<section class="slide distintos">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100%;
+      font-family: 'Montserrat', sans-serif;
+      background: #ffffff;
+    }
+
+    .slide.distintos {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: linear-gradient(135deg, #e7f8ff, #f6fbff);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+      box-sizing: border-box;
+      z-index: 1;
+    }
+
+    .distintos h2 {
+      font-size: 2.3rem;
+      color: #0a2458;
+      margin-bottom: 1rem;
+      animation: fadeInDown 0.8s ease-out;
+    }
+
+    .distintos .intro {
+      font-size: 1.2rem;
+      color: #333;
+      font-style: italic;
+      margin-bottom: 2rem;
+      max-width: 800px;
+      animation: fadeInUp 0.9s ease-out;
+    }
+
+    .bullets {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .bullets div {
+      font-size: 1.05rem;
+      color: #2c5f55;
+      background: #ffffff;
+      border: 2px solid #bde4f5;
+      padding: 1rem 1.5rem;
+      border-radius: 2rem;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.04);
+      max-width: 600px;
+      margin: 0 auto;
+      transition: all 0.3s ease;
+    }
+
+    .bullets div:hover {
+      background: #d8f0ff;
+      transform: translateY(-4px);
+    }
+
+    .quote {
+      font-style: italic;
+      font-size: 1.1rem;
+      color: #444;
+      margin: 2rem 0 1.5rem;
+      max-width: 700px;
+      animation: fadeInUp 1.2s ease-out;
+    }
+
+    .puzzle {
+      font-size: 1.4rem;
+      color: #0a2458;
+      font-weight: bold;
+      animation: pulseIn 1.3s ease-out infinite alternate;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulseIn {
+      from { transform: scale(1); }
+      to { transform: scale(1.05); }
+    }
+
+    @media (max-width: 768px) {
+      .bullets div {
+        font-size: 1rem;
+        padding: 1rem;
+      }
+
+      .quote {
+        font-size: 1rem;
+      }
+    }
+  </style>
+
+  <h2>✨ ¿Qué nos hace distintos?</h2>
+  <p class="intro">No vendemos consultoría. <strong>Creamos alianzas.</strong></p>
+
+  <div class="bullets">
+    <div>✔️ No entregamos carpetas, construimos claridad</div>
+    <div>✔️ No hacemos para ti, hacemos contigo</div>
+    <div>✔️ No nos quedamos en la auditoría, te ayudamos a avanzar</div>
+  </div>
+
+  <p class="quote">💬 “Lo que no se mide no se mejora, pero lo que no se siente… no se sostiene.”</p>
+
+</section>
