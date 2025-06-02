@@ -1,0 +1,128 @@
+<!-- Slide: ¿Cómo trabajamos? - Qalma -->
+<section class="slide como-trabajamos">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100%;
+      font-family: 'Montserrat', sans-serif;
+      background: #ffffff;
+    }
+
+    .slide.como-trabajamos {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: linear-gradient(135deg, #f6fbff, #e8f4ff);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+      box-sizing: border-box;
+      z-index: 1;
+    }
+
+    .como-trabajamos h2 {
+      font-size: 2.4rem;
+      color: #0a2458;
+      margin-bottom: 2rem;
+      animation: fadeInDown 0.8s ease-out;
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+      max-width: 900px;
+      width: 100%;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .item {
+      background: #ffffff;
+      border-left: 6px solid #0a2458;
+      padding: 1.2rem 1.5rem;
+      border-radius: 0.75rem;
+      text-align: left;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .item:hover {
+      background: #eef9ff;
+      transform: translateX(8px);
+    }
+
+    .item .number {
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #0a2458;
+      margin-bottom: 0.3rem;
+    }
+
+    .item .title {
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #1c3c64;
+    }
+
+    .item .description {
+      font-size: 0.95rem;
+      color: #333;
+      margin-top: 0.5rem;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .como-trabajamos h2 {
+        font-size: 1.7rem;
+      }
+      .item {
+        padding: 1rem;
+      }
+    }
+  </style>
+
+  <h2>🤩 ¿Cómo trabajamos?</h2>
+  <div class="timeline">
+    <div class="item">
+      <div class="number">01.</div>
+      <div class="title">Diagnóstico realista</div>
+      <div class="description">Sin adornos. Vemos lo que hay. Y lo que podría ser.</div>
+    </div>
+    <div class="item">
+      <div class="number">02.</div>
+      <div class="title">Acompañamiento humano</div>
+      <div class="description">Nos integramos en tu equipo. Nos importa tu cultura, tus valores, tu ritmo.</div>
+    </div>
+    <div class="item">
+      <div class="number">03.</div>
+      <div class="title">Estrategia personalizada</div>
+      <div class="description">Diseñamos contigo el camino, con flexibilidad y visión.</div>
+    </div>
+    <div class="item">
+      <div class="number">04.</div>
+      <div class="title">Acción imperfecta</div>
+      <div class="description">No esperamos el momento ideal. Empezamos. Ajustamos. Crecemos.</div>
+    </div>
+    <div class="item">
+      <div class="number">05.</div>
+      <div class="title">Mejora continua con alma</div>
+      <div class="description">Porque los sistemas pueden ser fríos… si no los llenas de propósito.</div>
+    </div>
+  </div>
+</section>
