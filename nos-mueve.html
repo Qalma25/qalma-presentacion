@@ -1,46 +1,59 @@
-<section class="slide">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Lo que nos mueve | Qalma</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100%;
+      font-family: 'Montserrat', sans-serif;
+    }
+
     .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100vw;
       height: 100vh;
-      overflow: hidden;
       background: linear-gradient(135deg, rgba(230, 249, 240, 0.9), rgba(224, 243, 255, 0.9)),
-            url('https://qalma25.github.io/qalma-presentacion/acompaniar.jpg') center center / cover no-repeat;
-
+                  url('https://qalma25.github.io/qalma-presentacion/acompaniar.jpg') center center / cover no-repeat;
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
       padding: 2rem;
       box-sizing: border-box;
-      font-family: 'Montserrat', sans-serif;
     }
 
-    .slide .content {
+    .content {
       max-width: 800px;
-      animation: fadeIn 1s ease-out;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
       background: rgba(255, 255, 255, 0.85);
       padding: 2rem;
       border-radius: 1rem;
       box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 1s ease-out;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
-    .slide h2 {
+    h2 {
       font-size: 2rem;
       margin-bottom: 1rem;
       color: #387c6d;
     }
 
-    .slide .intro {
+    .intro {
       font-size: 1.2rem;
       margin-bottom: 1.5rem;
       color: #333;
     }
 
-    .slide .quote {
+    .quote {
       font-style: italic;
       font-size: 1.1rem;
       color: #444;
@@ -141,11 +154,11 @@
     }
 
     @media (max-width: 768px) {
-      .slide h2 { font-size: 1.5rem; }
-      .slide .intro,
-      .slide .quote,
-      .slide .bubble,
-      .slide .closing-alt {
+      h2 { font-size: 1.5rem; }
+      .intro,
+      .quote,
+      .bubble,
+      .closing-alt {
         font-size: 1rem;
       }
 
@@ -160,7 +173,7 @@
   </style>
 
   <div class="content">
-    <h2>Lo que nos mueve</h2>
+    <h2>🌱 Lo que nos mueve</h2>
     <p class="intro">
       En Qalma, creemos que cada empresa tiene una historia, una razón de ser y un potencial único.
     </p>
@@ -179,10 +192,11 @@
     </div>
 
     <div class="closing-alt">
-      <p>Nuestro trabajo no es solo técnico.</p>
+      <p>📌 Nuestro trabajo no es solo técnico.</p>
       <div class="keywords">
         <span class="word">Es <strong>humano</strong>.</span>
         <span class="word">Es <strong>estratégico</strong>.</span>
+        <span class="word">Es <strong>transformador</strong>.</span>
       </div>
     </div>
   </div>
