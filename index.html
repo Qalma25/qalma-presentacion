@@ -223,7 +223,12 @@
       .logo-container img { width: 220px; }
       .arrow svg { width: 28px; height: 28px; }
       button { font-size: 0.95rem; padding: 10px 16px; }
-      .slide2 { padding: 60px 16px 140px; }
+      .slide2 {
+        padding: 60px 16px 140px;
+        height: auto;
+        min-height: 100vh;
+        overflow-y: auto;
+      }
       .headline { font-size: 1.6rem; }
       .intro-text, .highlight-box {
         font-size: 1rem;
@@ -315,10 +320,10 @@
       touchEndY = e.changedTouches[0].screenY;
       const delta = touchStartY - touchEndY;
 
-      if (Math.abs(delta) < 50) return; // evitar gestos pequeños
+      if (Math.abs(delta) < 50) return;
 
-      if (delta > 0 && currentSlide === 1) goToSlide(2);      // Swipe arriba
-      if (delta < 0 && currentSlide === 2) goToSlide(1);      // Swipe abajo
+      if (delta > 0 && currentSlide === 1) goToSlide(2); // Swipe arriba
+      if (delta < 0 && currentSlide === 2) goToSlide(1); // Swipe abajo
     });
   </script>
 </body>
