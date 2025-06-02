@@ -6,7 +6,6 @@
   <title>Qalma · Presentación</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
-
     html, body {
       margin: 0;
       padding: 0;
@@ -14,26 +13,22 @@
       height: 100%;
       overflow: hidden;
     }
-
     .wrapper {
       height: 200vh;
       width: 100%;
       transition: transform 0.8s ease-out;
       overflow: hidden;
     }
-
     .slide {
       width: 100%;
       height: 100vh;
       position: relative;
       overflow: hidden;
     }
-
     .slide1 {
       background: radial-gradient(circle at center, #ffffff 0%, #d9ecff 100%);
       z-index: 0;
     }
-
     .logo-container {
       position: absolute;
       top: 45%;
@@ -41,11 +36,9 @@
       transform: translate(-50%, -50%);
       z-index: 1;
     }
-
     .logo-container img {
       width: 480px;
     }
-
     .video-nubes {
       position: absolute;
       top: 0;
@@ -56,7 +49,6 @@
       z-index: 0;
       pointer-events: none;
     }
-
     .arrow {
       position: absolute;
       left: 50%;
@@ -66,25 +58,17 @@
       animation: bounce 2s infinite;
       display: flex;
     }
-
     .arrow svg {
       width: 40px;
       height: 40px;
       fill: #003366 !important;
     }
-
     .arrow.down { bottom: 40px; }
     .arrow.up { top: 40px; }
-
-    #flechaAbajo {
-      display: flex !important;
-    }
-
     @keyframes bounce {
       0%, 100% { transform: translateX(-50%) translateY(0); }
       50% { transform: translateX(-50%) translateY(10px); }
     }
-
     .slide2 {
       background-color: #ffffff;
       padding: 80px 20px 120px;
@@ -96,14 +80,12 @@
       height: 100vh;
       overflow: hidden;
     }
-
     .headline {
       font-size: 2.6rem;
       margin-bottom: 1rem;
       font-weight: 700;
       color: #003366;
     }
-
     .timeline {
       display: flex;
       align-items: center;
@@ -113,7 +95,6 @@
       width: 100%;
       max-width: 1000px;
     }
-
     .timeline::before {
       content: '';
       position: absolute;
@@ -124,29 +105,24 @@
       background: #003366;
       z-index: 0;
     }
-
     .logo-year {
       position: relative;
       z-index: 1;
       text-align: center;
     }
-
     .logo-year img {
       height: 60px;
       transition: transform 0.3s ease;
     }
-
     .logo-year img:hover {
       transform: scale(1.4);
     }
-
     .logo-year span {
       display: block;
       margin-top: 0.5rem;
       color: #003366;
       font-weight: 600;
     }
-
     .intro-text {
       max-width: 800px;
       font-size: 1.1rem;
@@ -155,7 +131,6 @@
       margin: 3rem 0;
       z-index: 2;
     }
-
     .highlight-box {
       background: #d9ecff;
       padding: 1.5rem;
@@ -167,7 +142,6 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
       z-index: 2;
     }
-
     .pillars {
       display: flex;
       flex-wrap: wrap;
@@ -176,7 +150,6 @@
       margin-top: 3rem;
       z-index: 2;
     }
-
     .pillar {
       background: #f1f5fa;
       border-radius: 8px;
@@ -186,13 +159,11 @@
       color: #2a2a2a;
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
-
     .pillar img {
       width: 32px;
       height: 32px;
       margin-bottom: 10px;
     }
-
     .boton-container {
       position: fixed;
       bottom: 20px;
@@ -202,7 +173,6 @@
       justify-content: center;
       z-index: 999;
     }
-
     button {
       max-width: 90%;
       font-size: 1rem;
@@ -217,8 +187,10 @@
       gap: 10px;
       cursor: pointer;
     }
-
     @media (max-width: 768px) {
+      html, body {
+        overflow: auto;
+      }
       .video-nubes { display: none; }
       .logo-container img { width: 220px; }
       .arrow svg { width: 28px; height: 28px; }
@@ -257,12 +229,12 @@
       <div class="logo-container"><img src="logo_qalma.png" alt="Logo Qalma" /></div>
       <video autoplay muted playsinline class="video-nubes" src="nubes2.webm"></video>
       <div class="arrow down flecha-flotante" id="flechaAbajo">
-        <svg viewBox="0 0 24 24"><path d="M12 16.5l-8-8 1.4-1.4L12 13.7l6.6-6.6L20 8.5z"></path></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 16.5l-8-8 1.4-1.4L12 13.7l6.6-6.6L20 8.5z"/></svg>
       </div>
     </section>
     <section class="slide slide2" id="slide2">
       <div class="arrow up" id="flechaArriba">
-        <svg style="transform: rotate(180deg);" viewBox="0 0 24 24"><path d="M12 16.5l-8-8 1.4-1.4L12 13.7l6.6-6.6L20 8.5z"></path></svg>
+        <svg style="transform: rotate(180deg);" viewBox="0 0 24 24"><path d="M12 16.5l-8-8 1.4-1.4L12 13.7l6.6-6.6L20 8.5z"/></svg>
       </div>
       <h1 class="headline">Bienvenidos a Qalma</h1>
       <div class="timeline">
@@ -281,49 +253,38 @@
       </div>
     </section>
   </div>
-
   <div class="boton-container" id="botonFlotante">
     <button onclick="document.body.style.transition = 'opacity 0.6s ease'; document.body.style.opacity = 0; setTimeout(() => { window.location.href = 'https://qalma25.github.io/qalma-presentacion/que-hacemos.html'; }, 600);">
       Siguiente
-      <svg fill="white" height="20" viewBox="0 0 24 24" width="20"><path d="M12 4l1.41 1.41L7.83 11H20v2H7.83l5.58 5.59L12 20l-8-8z"></path></svg>
+      <svg fill="white" height="20" viewBox="0 0 24 24" width="20"><path d="M12 4l1.41 1.41L7.83 11H20v2H7.83l5.58 5.59L12 20l-8-8z"/></svg>
     </button>
   </div>
-
   <script>
     const wrapper = document.getElementById('pageWrapper');
     const botonFlotante = document.getElementById('botonFlotante');
     const flechaAbajo = document.getElementById('flechaAbajo');
     const flechaArriba = document.getElementById('flechaArriba');
     let currentSlide = 1;
-
     function goToSlide(slideNumber) {
       wrapper.style.transform = slideNumber === 1 ? 'translateY(0)' : 'translateY(-100vh)';
       flechaAbajo.style.display = (slideNumber === 1) ? 'flex' : 'none';
       botonFlotante.style.display = (slideNumber === 2) ? 'flex' : 'none';
       currentSlide = slideNumber;
     }
-
     flechaAbajo.addEventListener('click', () => goToSlide(2));
     flechaArriba.addEventListener('click', () => goToSlide(1));
-
     window.addEventListener('load', () => goToSlide(1));
-
-    // Swipe móvil
     let touchStartY = 0;
     let touchEndY = 0;
-
     document.addEventListener('touchstart', e => {
       touchStartY = e.changedTouches[0].screenY;
     });
-
     document.addEventListener('touchend', e => {
       touchEndY = e.changedTouches[0].screenY;
       const delta = touchStartY - touchEndY;
-
       if (Math.abs(delta) < 50) return;
-
-      if (delta > 0 && currentSlide === 1) goToSlide(2); // Swipe arriba
-      if (delta < 0 && currentSlide === 2) goToSlide(1); // Swipe abajo
+      if (delta > 0 && currentSlide === 1) goToSlide(2);
+      if (delta < 0 && currentSlide === 2) goToSlide(1);
     });
   </script>
 </body>
