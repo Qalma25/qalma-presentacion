@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sectores | Qalma</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    section {
+      padding: 4rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .sector {
+      width: 100%;
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .sector:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .title {
+      font-size: 1.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .desc {
+      font-size: 1rem;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .blue { background: #e3f2fd; }
+    .yellow { background: #fffde7; }
+    .grey { background: #eceff1; }
+    .beige { background: #fbe9e7; }
+
+    @media (max-width: 768px) {
+      .title { font-size: 1.5rem; }
+      .desc { font-size: 0.95rem; }
+    }
+  </style>
+</head>
+<body>
+  <section>
+    <h1>Sectores de Actuación</h1>
+  </section>
+
+  <section class="sector beige">
+    <div class="icon">🏥</div>
+    <div class="title">Sector Sociosanitario</div>
+    <div class="desc">
+      Residencias, ayuda a domicilio, fabricantes de productos sanitarios...<br />
+      ISO 9001, UNE 158101, gestión de riesgos, huella de carbono...<br />
+      Enfoque humano y riguroso, con soluciones tecnológicas como CalmaNet.
+    </div>
+  </section>
+
+  <section class="sector blue">
+    <div class="icon">🧳</div>
+    <div class="title">Turismo y Hostelería</div>
+    <div class="desc">
+      Desde hoteles a agencias DMC y empresas MICE.<br />
+      Biosphere, ISO, Q de Calidad, responsabilidad social...<br />
+      Experiencias que dejan huella… positiva.
+    </div>
+  </section>
+
+  <section class="sector yellow">
+    <div class="icon">🏗️</div>
+    <div class="title">Construcción y Obras Públicas</div>
+    <div class="desc">
+      Calidad, seguridad y respeto ambiental en cada proyecto.<br />
+      Normas ISO, gestión de residuos, marcado CE.<br />
+      Más allá del cemento: construyendo confianza.
+    </div>
+  </section>
+
+  <section class="sector grey">
+    <div class="icon">🏭</div>
+    <div class="title">Industria y Producción</div>
+    <div class="desc">
+      Automoción, ferroviario, laboratorios, trazabilidad...<br />
+      Certificaciones técnicas, I+D+i, ISO/TS 22163...<br />
+      Donde la excelencia es la norma.
+    </div>
+  </section>
+</body>
+</html>
