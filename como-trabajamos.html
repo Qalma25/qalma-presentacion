@@ -14,106 +14,11 @@
       width: 100vw;
       height: 100vh;
       background: linear-gradient(135deg, #f6fbff, #e8f4ff);
-      overflow: hidden;
-    }
-
-    .scroll-container {
-      position: relative;
-      z-index: 2;
-      width: 100%;
-      height: 100%;
-      overflow-y: auto;
-      box-sizing: border-box;
       display: flex;
       flex-direction: column;
       align-items: center;
-      text-align: center;
-      padding: 7rem 1.5rem 7rem;
-    }
-
-    .logo {
-      position: absolute;
-      top: 1rem;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 3;
-      height: 45px;
-    }
-
-    h2 {
-      font-size: 2.2rem;
-      color: #0a2458;
-      margin-bottom: 2rem;
-    }
-
-    .carousel {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1.5rem;
-    }
-
-    .card {
-      background: #fff;
-      border-left: 5px solid #0a2458;
-      padding: 1.5rem 2rem;
-      border-radius: 0.75rem;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.05);
-      max-width: 600px;
-      width: 100%;
-      text-align: left;
-      font-size: 1.1rem;
-    }
-
-    .card .number {
-      font-weight: bold;
-      color: #0a2458;
-      margin-bottom: 0.4rem;
-    }
-
-    .card .title {
-      font-weight: 600;
-      font-size: 1.1rem;
-      color: #1c3c64;
-    }
-
-    .card .description {
-      font-size: 1rem;
-      color: #333;
-      margin-top: 0.4rem;
-    }
-
-    .controls {
-      display: flex;
       justify-content: center;
-      gap: 1rem;
-    }
-
-    .controls button {
-      background: #0a2458;
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 36px;
-      height: 36px;
-      font-size: 1.2rem;
-      cursor: pointer;
-    }
-
-    .continue-btn {
-      position: fixed;
-      bottom: 1.5rem;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: #0a2458;
-      color: white;
-      font-weight: 600;
-      padding: 0.9rem 2rem;
-      border-radius: 30px;
-      font-size: 1rem;
-      text-decoration: none;
-      z-index: 10;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      text-align: center;
     }
 
     canvas.network-bg {
@@ -126,18 +31,115 @@
       pointer-events: none;
     }
 
+    .logo {
+      position: absolute;
+      top: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      height: 45px;
+    }
+
+    h2 {
+      font-size: 2.4rem;
+      color: #0a2458;
+      margin-bottom: 2rem;
+      z-index: 2;
+    }
+
+    .carousel-container {
+      position: relative;
+      width: 90%;
+      max-width: 600px;
+      overflow: hidden;
+      z-index: 2;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .carousel-item {
+      min-width: 100%;
+      box-sizing: border-box;
+      padding: 2rem;
+      background: #ffffff;
+      border-left: 6px solid #0a2458;
+      border-radius: 0.75rem;
+      text-align: left;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+    }
+
+    .carousel-item .number {
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #0a2458;
+      margin-bottom: 0.4rem;
+    }
+
+    .carousel-item .title {
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #1c3c64;
+    }
+
+    .carousel-item .description {
+      font-size: 1rem;
+      color: #333;
+      margin-top: 0.4rem;
+    }
+
+    .carousel-nav {
+      margin-top: 1.5rem;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      z-index: 2;
+    }
+
+    .carousel-nav button {
+      background: #0a2458;
+      color: white;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .continue-btn {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #0a2458;
+      color: white;
+      font-weight: 600;
+      padding: 0.9rem 2rem;
+      border-radius: 30px;
+      font-size: 1rem;
+      text-decoration: none;
+      z-index: 3;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: background 0.3s ease;
+    }
+
+    .continue-btn:hover {
+      background-color: #4cb171;
+    }
+
     @media (max-width: 768px) {
       h2 {
         font-size: 1.8rem;
       }
 
-      .card {
-        font-size: 1.05rem;
-        padding: 1.2rem;
+      .carousel-item {
+        padding: 1.5rem 1rem;
       }
 
-      .card .description {
-        font-size: 1rem;
+      .logo {
+        height: 35px;
       }
 
       .continue-btn {
@@ -149,75 +151,67 @@
 
   <img src="https://qalma25.github.io/qalma-presentacion/logo_qalma.png" class="logo" alt="Qalma">
   <canvas class="network-bg"></canvas>
+  <h2>🤩 ¿Cómo trabajamos?</h2>
 
-  <div class="scroll-container">
-    <h2>🤩 ¿Cómo trabajamos?</h2>
-    <div class="carousel">
-      <div class="card" id="step-card">
+  <div class="carousel-container">
+    <div class="carousel-track">
+      <div class="carousel-item">
         <div class="number">01.</div>
         <div class="title">Diagnóstico realista</div>
         <div class="description">Sin adornos. Vemos lo que hay. Y lo que podría ser.</div>
       </div>
-      <div class="controls">
-        <button onclick="prevStep()">←</button>
-        <button onclick="nextStep()">→</button>
+      <div class="carousel-item">
+        <div class="number">02.</div>
+        <div class="title">Acompañamiento humano</div>
+        <div class="description">Nos integramos en tu equipo. Nos importa tu cultura, tus valores, tu ritmo.</div>
       </div>
+      <div class="carousel-item">
+        <div class="number">03.</div>
+        <div class="title">Estrategia personalizada</div>
+        <div class="description">Diseñamos contigo el camino, con flexibilidad y visión.</div>
+      </div>
+      <div class="carousel-item">
+        <div class="number">04.</div>
+        <div class="title">Acción imperfecta</div>
+        <div class="description">No esperamos el momento ideal. Empezamos. Ajustamos. Crecemos.</div>
+      </div>
+      <div class="carousel-item">
+        <div class="number">05.</div>
+        <div class="title">Mejora continua con alma</div>
+        <div class="description">Porque los sistemas pueden ser fríos… si no los llenas de propósito.</div>
+      </div>
+    </div>
+    <div class="carousel-nav">
+      <button onclick="prevSlide()">←</button>
+      <button onclick="nextSlide()">→</button>
     </div>
   </div>
 
   <a class="continue-btn" href="https://qalma25.github.io/qalma-presentacion/accion.html">Continuar →</a>
 
   <script>
-    const steps = [
-      {
-        number: "01.",
-        title: "Diagnóstico realista",
-        description: "Sin adornos. Vemos lo que hay. Y lo que podría ser."
-      },
-      {
-        number: "02.",
-        title: "Acompañamiento humano",
-        description: "Nos integramos en tu equipo. Nos importa tu cultura, tus valores, tu ritmo."
-      },
-      {
-        number: "03.",
-        title: "Estrategia personalizada",
-        description: "Diseñamos contigo el camino, con flexibilidad y visión."
-      },
-      {
-        number: "04.",
-        title: "Acción imperfecta",
-        description: "No esperamos el momento ideal. Empezamos. Ajustamos. Crecemos."
-      },
-      {
-        number: "05.",
-        title: "Mejora continua con alma",
-        description: "Porque los sistemas pueden ser fríos… si no los llenas de propósito."
-      }
-    ];
+    let index = 0;
+    const track = document.querySelector('.carousel-track');
+    const items = document.querySelectorAll('.carousel-item');
 
-    let current = 0;
-    const card = document.getElementById("step-card");
-
-    function updateStep() {
-      card.querySelector(".number").textContent = steps[current].number;
-      card.querySelector(".title").textContent = steps[current].title;
-      card.querySelector(".description").textContent = steps[current].description;
+    function updateCarousel() {
+      const offset = -index * 100;
+      track.style.transform = `translateX(${offset}%)`;
     }
 
-    function nextStep() {
-      current = (current + 1) % steps.length;
-      updateStep();
+    function nextSlide() {
+      index = (index + 1) % items.length;
+      updateCarousel();
     }
 
-    function prevStep() {
-      current = (current - 1 + steps.length) % steps.length;
-      updateStep();
+    function prevSlide() {
+      index = (index - 1 + items.length) % items.length;
+      updateCarousel();
     }
 
-    updateStep();
+    updateCarousel();
 
-    // Fondo animado
+    // fondo red
     const canvas = document.querySelector('.network-bg');
     const ctx = canvas.getContext('2d');
     let width, height;
