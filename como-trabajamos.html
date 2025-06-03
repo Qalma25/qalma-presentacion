@@ -1,45 +1,50 @@
-<section class="slide como-trabajamos">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>¿Cómo trabajamos? - Qalma</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <style>
     html, body {
       margin: 0;
       padding: 0;
-      height: 100%;
       font-family: 'Montserrat', sans-serif;
       background: #ffffff;
-      overflow-x: hidden;
+      height: 100%;
+      overflow: hidden;
     }
 
     .slide.como-trabajamos {
       background: linear-gradient(135deg, #f6fbff, #e8f4ff);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
       position: relative;
+      min-height: 100vh;
+      width: 100%;
     }
 
     .logo {
-      position: fixed;
-      top: 1.5rem;
-      left: 50%;
-      transform: translateX(-50%);
-      height: 40px;
-      z-index: 3;
+      display: block;
+      margin: 2rem auto 1rem;
+      height: 50px;
     }
 
-    .scroll-container {
-      width: 100%;
-      max-width: 900px;
-      padding: 6rem 1.5rem 8rem;
+    .content {
+      position: relative;
+      z-index: 2;
+      padding: 0 1.5rem 7rem;
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
       align-items: center;
+      max-width: 1000px;
+      margin: 0 auto;
       text-align: center;
+      overflow-y: auto;
+      height: calc(100vh - 100px);
     }
 
-    .scroll-container h2 {
-      font-size: 2.3rem;
+    h2 {
+      font-size: 2.2rem;
       color: #0a2458;
       margin-bottom: 2rem;
     }
@@ -52,10 +57,10 @@
     }
 
     .item {
-      background: #fff;
-      border-left: 6px solid #0a2458;
-      border-radius: 0.75rem;
+      background: #ffffff;
+      border-left: 5px solid #0a2458;
       padding: 1.4rem 1.8rem;
+      border-radius: 0.75rem;
       text-align: left;
       box-shadow: 0 6px 18px rgba(0,0,0,0.05);
     }
@@ -64,24 +69,23 @@
       font-weight: bold;
       font-size: 1.1rem;
       color: #0a2458;
-      margin-bottom: 0.3rem;
     }
 
     .item .title {
-      font-size: 1.1rem;
       font-weight: 600;
+      font-size: 1.1rem;
       color: #1c3c64;
     }
 
     .item .description {
       font-size: 1rem;
       color: #333;
-      margin-top: 0.4rem;
+      margin-top: 0.3rem;
     }
 
-    .btn-continuar {
+    .continue-btn {
       position: fixed;
-      bottom: 1.5rem;
+      bottom: 20px;
       left: 50%;
       transform: translateX(-50%);
       background-color: #0a2458;
@@ -92,116 +96,111 @@
       font-size: 1rem;
       text-decoration: none;
       z-index: 10;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
       transition: background 0.3s ease;
     }
 
-    .btn-continuar:hover {
-      background-color: #133372;
+    .continue-btn:hover {
+      background-color: #4cb171;
     }
 
     canvas.network-bg {
       position: absolute;
       top: 0;
       left: 0;
-      z-index: 0;
       width: 100%;
       height: 100%;
+      z-index: 0;
       pointer-events: none;
     }
 
     @media (max-width: 768px) {
-      .scroll-container h2 {
+      h2 {
         font-size: 1.7rem;
       }
-
       .item {
-        padding: 1.2rem;
+        padding: 1rem 1.2rem;
       }
-
+      .item .title {
+        font-size: 1rem;
+      }
       .item .description {
-        font-size: 1.05rem;
+        font-size: 1rem;
         line-height: 1.5;
       }
-
       .logo {
-        height: 35px;
+        height: 40px;
+        margin: 1.5rem auto;
       }
-
-      .btn-continuar {
-        font-size: 0.95rem;
+      .continue-btn {
+        font-size: 0.9rem;
         padding: 0.8rem 1.6rem;
       }
     }
   </style>
-
-  <!-- Logo -->
-  <img src="https://qalma25.github.io/qalma-presentacion/logo_qalma.png" class="logo" alt="Qalma">
-
-  <!-- Canvas red de puntos -->
-  <canvas class="network-bg"></canvas>
-
-  <!-- Contenido -->
-  <div class="scroll-container">
-    <h2>🤩 ¿Cómo trabajamos?</h2>
-    <div class="timeline">
-      <div class="item">
-        <div class="number">01.</div>
-        <div class="title">Diagnóstico realista</div>
-        <div class="description">Sin adornos. Vemos lo que hay. Y lo que podría ser.</div>
-      </div>
-      <div class="item">
-        <div class="number">02.</div>
-        <div class="title">Acompañamiento humano</div>
-        <div class="description">Nos integramos en tu equipo. Nos importa tu cultura, tus valores, tu ritmo.</div>
-      </div>
-      <div class="item">
-        <div class="number">03.</div>
-        <div class="title">Estrategia personalizada</div>
-        <div class="description">Diseñamos contigo el camino, con flexibilidad y visión.</div>
-      </div>
-      <div class="item">
-        <div class="number">04.</div>
-        <div class="title">Acción imperfecta</div>
-        <div class="description">No esperamos el momento ideal. Empezamos. Ajustamos. Crecemos.</div>
-      </div>
-      <div class="item">
-        <div class="number">05.</div>
-        <div class="title">Mejora continua con alma</div>
-        <div class="description">Porque los sistemas pueden ser fríos… si no los llenas de propósito.</div>
+</head>
+<body>
+  <section class="slide como-trabajamos">
+    <canvas class="network-bg"></canvas>
+    <img src="https://qalma25.github.io/qalma-presentacion/logo_qalma.png" alt="Qalma" class="logo">
+    <div class="content">
+      <h2>🤩 ¿Cómo trabajamos?</h2>
+      <div class="timeline">
+        <div class="item">
+          <div class="number">01.</div>
+          <div class="title">Diagnóstico realista</div>
+          <div class="description">Sin adornos. Vemos lo que hay. Y lo que podría ser.</div>
+        </div>
+        <div class="item">
+          <div class="number">02.</div>
+          <div class="title">Acompañamiento humano</div>
+          <div class="description">Nos integramos en tu equipo. Nos importa tu cultura, tus valores, tu ritmo.</div>
+        </div>
+        <div class="item">
+          <div class="number">03.</div>
+          <div class="title">Estrategia personalizada</div>
+          <div class="description">Diseñamos contigo el camino, con flexibilidad y visión.</div>
+        </div>
+        <div class="item">
+          <div class="number">04.</div>
+          <div class="title">Acción imperfecta</div>
+          <div class="description">No esperamos el momento ideal. Empezamos. Ajustamos. Crecemos.</div>
+        </div>
+        <div class="item">
+          <div class="number">05.</div>
+          <div class="title">Mejora continua con alma</div>
+          <div class="description">Porque los sistemas pueden ser fríos… si no los llenas de propósito.</div>
+        </div>
       </div>
     </div>
-  </div>
+    <a class="continue-btn" href="https://qalma25.github.io/qalma-presentacion/accion.html">Continuar →</a>
+  </section>
 
-  <!-- Botón continuar -->
-  <a class="btn-continuar" href="https://qalma25.github.io/qalma-presentacion/accion.html">Continuar →</a>
-
-  <!-- JS: animación de red de puntos -->
   <script>
     const canvas = document.querySelector('.network-bg');
     const ctx = canvas.getContext('2d');
     let width, height;
     const points = [];
-    const numPoints = 50;
+    const numPoints = 60;
 
-    function resizeCanvas() {
+    function resize() {
       width = canvas.width = window.innerWidth;
       height = canvas.height = window.innerHeight;
     }
 
-    function generatePoints() {
+    function createPoints() {
       points.length = 0;
       for (let i = 0; i < numPoints; i++) {
         points.push({
           x: Math.random() * width,
           y: Math.random() * height,
-          dx: (Math.random() - 0.5) * 0.3,
-          dy: (Math.random() - 0.5) * 0.3
+          dx: (Math.random() - 0.5) * 0.4,
+          dy: (Math.random() - 0.5) * 0.4
         });
       }
     }
 
-    function animate() {
+    function draw() {
       ctx.clearRect(0, 0, width, height);
       for (let i = 0; i < points.length; i++) {
         const p1 = points[i];
@@ -219,7 +218,7 @@
         for (let j = i + 1; j < points.length; j++) {
           const p2 = points[j];
           const dist = Math.hypot(p1.x - p2.x, p1.y - p2.y);
-          if (dist < 150) {
+          if (dist < 140) {
             ctx.beginPath();
             ctx.moveTo(p1.x, p1.y);
             ctx.lineTo(p2.x, p2.y);
@@ -228,16 +227,18 @@
           }
         }
       }
-      requestAnimationFrame(animate);
+
+      requestAnimationFrame(draw);
     }
 
     window.addEventListener('resize', () => {
-      resizeCanvas();
-      generatePoints();
+      resize();
+      createPoints();
     });
 
-    resizeCanvas();
-    generatePoints();
-    animate();
+    resize();
+    createPoints();
+    draw();
   </script>
-</section>
+</body>
+</html>
