@@ -1,6 +1,4 @@
-
 <!DOCTYPE html>
-
 <html lang="es">
 <head>
 <meta charset="utf-8"/>
@@ -8,311 +6,289 @@
 <title>¿Qué hacemos en Qalma?</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&amp;display=swap" rel="stylesheet"/>
 <style>
-    body {
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      color: white;
-      overflow-x: hidden;
-      padding: 0;
-    }
+  body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    overflow-x: hidden;
+    padding: 0;
+    position: relative;
+    z-index: 0;
+  }
 
-    section {
-      padding: 80px 20px;
+  section {
+    padding: 80px 20px;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .services-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+  }
+
+  .service-box {
+    border-radius: 12px;
+    padding: 1rem 1.2rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    max-width: 300px;
+    width: fit-content;
+    text-align: left;
+    background: white;
+    color: #003366;
+  }
+
+  .toggle-plus {
+    cursor: pointer;
+    font-size: 2rem;
+    margin: 3rem auto 1rem;
+    width: 50px;
+    height: 50px;
+    color: #003366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+
+  .toggle-plus.rotate {
+    transform: rotate(45deg);
+  }
+
+  #difference {
+    margin-top: 3rem;
+  }
+
+  .diff-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #003366;
+    margin-bottom: 2rem;
+  }
+
+  .diff-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+  }
+
+  .diff-line.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .diff-line p {
+    margin: 0;
+    font-size: 1.2rem;
+    position: relative;
+  }
+
+  .highlight-line {
+    display: inline-block;
+    padding-bottom: 6px;
+  }
+
+  .highlight-line svg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 8px;
+    width: 100%;
+  }
+
+  .highlight-path {
+    stroke: #d9ecff;
+    stroke-width: 3;
+    fill: none;
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    animation: drawUnderline 1s ease forwards;
+  }
+
+  .arrow-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  @keyframes drawUnderline {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    h1 { font-size: 2rem; }
+    .subtitle { font-size: 1.2rem; }
+    .services-container {
+      flex-direction: column;
+      align-items: center;
+    }
+    .service-box {
+      width: auto;
+      max-width: 90%;
+      padding: 1rem;
       text-align: center;
     }
-
-    h1 {
-      font-size: 2.8rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
-
-    .subtitle {
-      font-size: 1.5rem;
-      margin-bottom: 3rem;
-    }
-
-    .services-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      justify-content: center;
-    }
-
-    .service-box {
-      border-radius: 12px;
-      padding: 1rem 1.2rem;
-      font-size: 1rem;
-      line-height: 1.5;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-      max-width: 300px;
-      width: fit-content;
-      text-align: left;
-    }
-
-    .toggle-plus {
-      cursor: pointer;
-      font-size: 2rem;
-      margin: 3rem auto 1rem;
-      width: 50px;
-      height: 50px;
-      color: #003366;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.3s ease;
-    }
-
-    .toggle-plus.rotate {
-      transform: rotate(45deg);
-    }
-
-    #difference {
-      margin-top: 3rem;
-    }
-
-    .diff-title {
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: #d9ecff;
-      margin-bottom: 2rem;
-    }
-
     .diff-line {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin-bottom: 1.5rem;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.6s ease;
+      flex-direction: column;
+      gap: 0.5rem;
+      text-align: center;
     }
-
-    .diff-line.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .diff-line p {
-      margin: 0;
-      font-size: 1.2rem;
-      position: relative;
-    }
-
-    .highlight-line {
-      display: inline-block;
-      padding-bottom: 6px;
-    }
-
-    .highlight-line svg {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: 8px;
-      width: 100%;
-    }
-
-    .highlight-path {
-      stroke: #d9ecff;
-      stroke-width: 3;
-      fill: none;
-      stroke-dasharray: 100;
-      stroke-dashoffset: 100;
-      animation: drawUnderline 1s ease forwards;
-    }
-
     .arrow-icon {
-      width: 24px;
-      height: 24px;
+      transform: rotate(90deg);
     }
+  }
 
-    @keyframes drawUnderline {
-      to {
-        stroke-dashoffset: 0;
-      }
-    }
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('quienes-somos.jpg') center/cover no-repeat;
+    opacity: 0.25;
+    z-index: -2;
+  }
 
-    @media (max-width: 768px) {
-      h1 { font-size: 2rem; }
-      .subtitle { font-size: 1.2rem; }
-      .services-container {
-        flex-direction: column;
-        align-items: center;
-      }
-      .service-box {
-        width: auto;
-        max-width: 90%;
-        padding: 1rem;
-        text-align: center;
-      }
-      .diff-line {
-        flex-direction: column;
-        gap: 0.5rem;
-        text-align: center;
-      }
-      .arrow-icon {
-        transform: rotate(90deg);
-      }
-    }
-  
+  body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    opacity: 0.4;
+    z-index: -1;
+  }
 
-body::before {
-  content: "";
+  /* BOTÓN DE CONTINUAR */
+  .continue-button {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-              url('quienes-somos.jpg') center/cover no-repeat;
-  z-index: -1;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #003366;
+  color: white;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+  z-index: 999;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
-/* Cambios personalizados */
-body {
-  color: #003366; /* Azul oscuro */
-  position: relative;
-  z-index: 0;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('quienes-somos.jpg') center/cover no-repeat;
-  opacity: 0.15;
-  z-index: -2;
-}
-
-body::after {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: white;
-  opacity: 0.7;
-  z-index: -1;
+.continue-button:hover {
+  background-color: #002244;
 }
 
 
-/* Cambios personalizados ajustados */
-body {
-  color: #003366; /* Azul oscuro */
-  position: relative;
-  z-index: 0;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('quienes-somos.jpg') center/cover no-repeat;
-  opacity: 0.25;  /* Imagen de fondo más visible */
-  z-index: -2;
-}
-
-body::after {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: white;
-  opacity: 0.4;  /* Menos opacidad blanca para dejar ver más fondo */
-  z-index: -1;
-}
-
-.diff-title {
-  color: #003366 !important;  /* Igualar color del título "Nuestra diferencia" */
-}
 
 </style>
 </head>
 <body>
 <section>
-<h1>¿Qué hacemos en Qalma?</h1>
-<p class="subtitle">Transformamos realidades empresariales a través de:</p>
-<div class="services-container">
-<div class="service-box">Consultoría estratégica en calidad, sostenibilidad, medio ambiente y más.</div>
-<div class="service-box">Acompañamiento humano y personalizado: no solo sistemas, sino soluciones.</div>
-<div class="service-box">Formación y digitalización: herramientas reales, prácticas, accionables.</div>
-<div class="service-box">Un enfoque integral y adaptable, desde el diagnóstico hasta la certificación.</div>
-</div>
-<div class="toggle-plus" onclick="toggleDifference(this)">+</div>
-<div id="difference"></div>
+  <h1>¿Qué hacemos en Qalma?</h1>
+  <p class="subtitle">Transformamos realidades empresariales a través de:</p>
+  <div class="services-container">
+    <div class="service-box">Consultoría estratégica en calidad, sostenibilidad, medio ambiente y más.</div>
+    <div class="service-box">Acompañamiento humano y personalizado: no solo sistemas, sino soluciones.</div>
+    <div class="service-box">Formación y digitalización: herramientas reales, prácticas, accionables.</div>
+    <div class="service-box">Un enfoque integral y adaptable, desde el diagnóstico hasta la certificación.</div>
+  </div>
+  <div class="toggle-plus" onclick="toggleDifference(this)">+</div>
+  <div id="difference"></div>
 </section>
+
+<a href="https://qalma25.github.io/qalma-presentacion/servicios" class="continue-button" target="_blank">Continuar</a>
+
 <script>
-    function toggleDifference(btn) {
-      btn.classList.toggle("rotate");
-      const diff = document.getElementById("difference");
-      diff.innerHTML = "";
+  function toggleDifference(btn) {
+    btn.classList.toggle("rotate");
+    const diff = document.getElementById("difference");
+    diff.innerHTML = "";
 
-      if (btn.classList.contains("rotate")) {
-        const data = [
-          { left: "No competimos por precio.", right: "Competimos por valor." },
-          { left: "Donde otros ofrecen documentos,", right: "nosotros ofrecemos tranquilidad, claridad y visión." },
-          { left: "Porque donde otros ven una ISO,", right: "nosotros vemos la posibilidad de hacer las cosas mejor." }
-        ];
+    if (btn.classList.contains("rotate")) {
+      const data = [
+        { left: "No competimos por precio.", right: "Competimos por valor." },
+        { left: "Donde otros ofrecen documentos,", right: "nosotros ofrecemos tranquilidad, claridad y visión." },
+        { left: "Porque donde otros ven una ISO,", right: "nosotros vemos la posibilidad de hacer las cosas mejor." }
+      ];
 
-        const title = document.createElement("h2");
-        title.className = "diff-title";
-        title.textContent = "Nuestra diferencia";
-        diff.appendChild(title);
+      const title = document.createElement("h2");
+      title.className = "diff-title";
+      title.textContent = "Nuestra diferencia";
+      diff.appendChild(title);
 
-        let delay = 0;
+      let delay = 0;
 
-        data.forEach(({ left, right }) => {
-          setTimeout(() => {
-            const line = document.createElement("div");
-            line.className = "diff-line";
+      data.forEach(({ left, right }) => {
+        setTimeout(() => {
+          const line = document.createElement("div");
+          line.className = "diff-line";
 
-            const pLeft = document.createElement("p");
-            const pRight = document.createElement("p");
+          const pLeft = document.createElement("p");
+          const pRight = document.createElement("p");
 
-            pLeft.className = "highlight-line";
-            pRight.className = "highlight-line";
+          pLeft.className = "highlight-line";
+          pRight.className = "highlight-line";
 
-            pLeft.innerHTML = left + `
-              <svg viewBox='0 0 100 10' preserveAspectRatio='none'>
-                <path d='M0,5 Q50,10 100,5' class='highlight-path'></path>
-              </svg>
-            `;
+          pLeft.innerHTML = left + `
+            <svg viewBox='0 0 100 10' preserveAspectRatio='none'>
+              <path d='M0,5 Q50,10 100,5' class='highlight-path'></path>
+            </svg>
+          `;
 
-            pRight.innerHTML = right + `
-              <svg viewBox='0 0 100 10' preserveAspectRatio='none'>
-                <path d='M0,5 Q50,10 100,5' class='highlight-path'></path>
-              </svg>
-            `;
+          pRight.innerHTML = right + `
+            <svg viewBox='0 0 100 10' preserveAspectRatio='none'>
+              <path d='M0,5 Q50,10 100,5' class='highlight-path'></path>
+            </svg>
+          `;
 
-            const arrow = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-            arrow.setAttribute("class", "arrow-icon");
-            arrow.setAttribute("viewBox", "0 0 24 24");
-            const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-            path.setAttribute("fill", "#d9ecff");
-            path.setAttribute("d", "M10 17l5-5-5-5v10z");
-            arrow.appendChild(path);
+          const arrow = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+          arrow.setAttribute("class", "arrow-icon");
+          arrow.setAttribute("viewBox", "0 0 24 24");
+          const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+          path.setAttribute("fill", "#d9ecff");
+          path.setAttribute("d", "M10 17l5-5-5-5v10z");
+          arrow.appendChild(path);
 
-            line.appendChild(pLeft);
-            line.appendChild(arrow);
-            line.appendChild(pRight);
-            diff.appendChild(line);
+          line.appendChild(pLeft);
+          line.appendChild(arrow);
+          line.appendChild(pRight);
+          diff.appendChild(line);
 
-            setTimeout(() => line.classList.add("visible"), 10);
-          }, delay);
-          delay += 1300;
-        });
-      }
+          setTimeout(() => line.classList.add("visible"), 10);
+        }, delay);
+        delay += 1300;
+      });
     }
-  </script>
+  }
+</script>
 </body>
 </html>
