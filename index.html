@@ -30,25 +30,23 @@
       z-index: 0;
     }
     .logo-container {
-      position: absolute;
-      top: 45%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 1;
-    }
-    .logo-container img {
-      width: 480px;
-    }
-    .video-nubes {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: 0;
-      pointer-events: none;
-    }
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0; /* antes era 1 */
+}
+.video-nubes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1; /* antes era 0 */
+  pointer-events: none;
+}
+
     .arrow {
       position: absolute;
       left: 50%;
@@ -221,6 +219,16 @@
       .timeline::before { display: none; }
       .logo-year img { height: 48px; }
     }
+#puzzle-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10; /* subido para que esté encima de todo */
+}
+
   </style>
 </head>
 <body>
