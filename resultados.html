@@ -1,33 +1,48 @@
-<!-- Slide: Resultados que importan - Qalma -->
-<section class="slide resultados">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resultados que importan | Qalma</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     html, body {
       margin: 0;
       padding: 0;
-      overflow: hidden;
-      height: 100%;
       font-family: 'Montserrat', sans-serif;
-      background: #ffffff;
+      min-height: 100vh;
+      overflow-x: hidden;
+      background: linear-gradient(135deg, #f5faff, #e6f2ff);
+    }
+
+    .logo-container {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+    }
+
+    .logo-container img {
+      height: 50px;
+      width: auto;
     }
 
     .slide.resultados {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: linear-gradient(135deg, #f5faff, #e6f2ff);
+      position: relative;
+      z-index: 2;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 3rem 2rem;
+      padding: 120px 20px 140px;
       box-sizing: border-box;
     }
 
-    .resultados h2 {
-      font-size: 2.5rem;
+    h2 {
+      font-size: 2.4rem;
       color: #0a2458;
       margin-bottom: 2rem;
       animation: fadeInDown 1s ease-out;
@@ -79,23 +94,130 @@
       }
     }
 
+    .btn-continuar {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #0a2458;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: background 0.3s ease;
+      z-index: 10;
+    }
+
+    .btn-continuar:hover {
+      background-color: #092040;
+    }
+
+    /* Fondo de barras animadas en toda la pantalla */
+    .chart-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-end;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .chart-bar {
+      width: 12px;
+      background: linear-gradient(to top, #31a4cf, #79c6e8);
+      animation: growBar 4s ease-in-out infinite alternate;
+      transform-origin: bottom;
+      opacity: 0.15;
+    }
+
+    .chart-bar:nth-child(1) { height: 20%; animation-delay: 0s; }
+    .chart-bar:nth-child(2) { height: 40%; animation-delay: 0.4s; }
+    .chart-bar:nth-child(3) { height: 60%; animation-delay: 0.8s; }
+    .chart-bar:nth-child(4) { height: 80%; animation-delay: 1.2s; }
+    .chart-bar:nth-child(5) { height: 100%; animation-delay: 1.6s; }
+    .chart-bar:nth-child(6) { height: 35%; animation-delay: 2s; }
+    .chart-bar:nth-child(7) { height: 55%; animation-delay: 2.4s; }
+    .chart-bar:nth-child(8) { height: 75%; animation-delay: 2.8s; }
+    .chart-bar:nth-child(9) { height: 90%; animation-delay: 3.2s; }
+    .chart-bar:nth-child(10){ height: 60%; animation-delay: 3.6s; }
+
+    @keyframes growBar {
+      0% { transform: scaleY(0.3); }
+      100% { transform: scaleY(1); }
+    }
+
     @media (max-width: 768px) {
-      .resultados h2 {
+      html, body {
+        overflow-y: auto;
+      }
+
+      .slide.resultados {
+        justify-content: flex-start;
+        padding: 100px 1rem 160px;
+      }
+
+      h2 {
         font-size: 1.8rem;
       }
 
       .highlight .item {
-        font-size: 1rem;
+        font-size: 0.95rem;
         padding: 1rem 1.2rem;
+      }
+
+      .btn-continuar {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+      }
+
+      .logo-container img {
+        height: 42px;
       }
     }
   </style>
+</head>
+<body>
 
-  <h2>📈 Resultados que importan</h2>
-  <div class="highlight">
-    <div class="item">Más de 20 años transformando organizaciones</div>
-    <div class="item">Decenas de empresas certificadas, y —más importante— satisfechas</div>
-    <div class="item">Formación con impacto directo en la operativa diaria</div>
-    <div class="item">Plataformas digitales que ordenan, miden y liberan tiempo</div>
+  <!-- Logo -->
+  <div class="logo-container">
+    <img src="https://qalma25.github.io/qalma-presentacion/logo_qalma.png" alt="Logo Qalma" />
   </div>
-</section>
+
+  <!-- Fondo de barras animadas -->
+  <div class="chart-background">
+    <div class="chart-bar"></div>
+    <div class="chart-bar"></div>
+    <div class="chart-bar"></div>
+    <div class="chart-bar"></div>
+    <div class="chart-bar"></div>
+    <div class="chart-bar"></div>
+    <div class="chart-bar"></div>
+    <div class="chart-bar"></div>
+    <div class="chart-bar"></div>
+    <div class="chart-bar"></div>
+  </div>
+
+  <!-- Contenido -->
+  <section class="slide resultados">
+    <h2>📈 Resultados que importan</h2>
+    <div class="highlight">
+      <div class="item">Más de 20 años transformando organizaciones</div>
+      <div class="item">Decenas de empresas certificadas, y —más importante— satisfechas</div>
+      <div class="item">Formación con impacto directo en la operativa diaria</div>
+      <div class="item">Plataformas digitales que ordenan, miden y liberan tiempo</div>
+    </div>
+  </section>
+
+  <!-- Botón continuar -->
+  <a href="https://qalma25.github.io/qalma-presentacion/como-trabajamos" class="btn-continuar">Continuar →</a>
+
+</body>
+</html>
