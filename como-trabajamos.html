@@ -6,7 +6,6 @@
       height: 100%;
       font-family: 'Montserrat', sans-serif;
       background: #ffffff;
-      overflow: hidden;
     }
 
     .slide.como-trabajamos {
@@ -14,11 +13,16 @@
       width: 100vw;
       height: 100vh;
       background: linear-gradient(135deg, #f6fbff, #e8f4ff);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
+      overflow: hidden;
+    }
+
+    .logo {
+      position: absolute;
+      top: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      height: 45px;
     }
 
     canvas.network-bg {
@@ -31,85 +35,69 @@
       pointer-events: none;
     }
 
-    .logo {
-      position: absolute;
-      top: 1rem;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 3;
-      height: 45px;
+    .scroll-container {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      min-height: 100vh;
+      padding: 7rem 1.5rem 9rem;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
 
     h2 {
-      font-size: 2.4rem;
+      font-size: 2.5rem;
       color: #0a2458;
       margin-bottom: 2rem;
-      z-index: 2;
     }
 
-    .carousel-container {
-      position: relative;
-      width: 90%;
-      max-width: 600px;
-      overflow: hidden;
-      z-index: 2;
-    }
-
-    .carousel-track {
+    .timeline {
       display: flex;
-      transition: transform 0.5s ease;
+      flex-direction: column;
+      gap: 1.8rem;
+      max-width: 900px;
+      width: 100%;
     }
 
-    .carousel-item {
-      min-width: 100%;
-      box-sizing: border-box;
-      padding: 2rem;
+    .item {
       background: #ffffff;
       border-left: 6px solid #0a2458;
+      padding: 1.4rem 1.8rem;
       border-radius: 0.75rem;
       text-align: left;
       box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, background 0.3s ease;
     }
 
-    .carousel-item .number {
+    .item:hover {
+      background: #eef9ff;
+      transform: translateX(8px);
+    }
+
+    .item .number {
       font-weight: bold;
       font-size: 1.2rem;
       color: #0a2458;
       margin-bottom: 0.4rem;
     }
 
-    .carousel-item .title {
+    .item .title {
       font-weight: 600;
       font-size: 1.1rem;
       color: #1c3c64;
     }
 
-    .carousel-item .description {
+    .item .description {
       font-size: 1rem;
       color: #333;
       margin-top: 0.4rem;
     }
 
-    .carousel-nav {
-      margin-top: 1.5rem;
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      z-index: 2;
-    }
-
-    .carousel-nav button {
-      background: #0a2458;
-      color: white;
-      border: none;
-      padding: 0.6rem 1.2rem;
-      border-radius: 4px;
-      cursor: pointer;
-      font-weight: 600;
-    }
-
     .continue-btn {
-      position: absolute;
+      position: fixed;
       bottom: 1.5rem;
       left: 50%;
       transform: translateX(-50%);
@@ -120,7 +108,7 @@
       border-radius: 30px;
       font-size: 1rem;
       text-decoration: none;
-      z-index: 3;
+      z-index: 10;
       box-shadow: 0 4px 12px rgba(0,0,0,0.15);
       transition: background 0.3s ease;
     }
@@ -130,16 +118,25 @@
     }
 
     @media (max-width: 768px) {
+      .logo {
+        height: 35px;
+      }
+
+      .scroll-container {
+        padding: 6rem 1rem 10rem;
+      }
+
       h2 {
         font-size: 1.8rem;
       }
 
-      .carousel-item {
-        padding: 1.5rem 1rem;
+      .item {
+        padding: 1.2rem;
       }
 
-      .logo {
-        height: 35px;
+      .item .description {
+        font-size: 1.05rem;
+        line-height: 1.5;
       }
 
       .continue-btn {
@@ -149,69 +146,49 @@
     }
   </style>
 
+  <!-- Logo -->
   <img src="https://qalma25.github.io/qalma-presentacion/logo_qalma.png" class="logo" alt="Qalma">
-  <canvas class="network-bg"></canvas>
-  <h2>🤩 ¿Cómo trabajamos?</h2>
 
-  <div class="carousel-container">
-    <div class="carousel-track">
-      <div class="carousel-item">
+  <!-- Fondo animado -->
+  <canvas class="network-bg"></canvas>
+
+  <!-- Contenido -->
+  <div class="scroll-container">
+    <h2>🤩 ¿Cómo trabajamos?</h2>
+    <div class="timeline">
+      <div class="item">
         <div class="number">01.</div>
         <div class="title">Diagnóstico realista</div>
         <div class="description">Sin adornos. Vemos lo que hay. Y lo que podría ser.</div>
       </div>
-      <div class="carousel-item">
+      <div class="item">
         <div class="number">02.</div>
         <div class="title">Acompañamiento humano</div>
         <div class="description">Nos integramos en tu equipo. Nos importa tu cultura, tus valores, tu ritmo.</div>
       </div>
-      <div class="carousel-item">
+      <div class="item">
         <div class="number">03.</div>
         <div class="title">Estrategia personalizada</div>
         <div class="description">Diseñamos contigo el camino, con flexibilidad y visión.</div>
       </div>
-      <div class="carousel-item">
+      <div class="item">
         <div class="number">04.</div>
         <div class="title">Acción imperfecta</div>
         <div class="description">No esperamos el momento ideal. Empezamos. Ajustamos. Crecemos.</div>
       </div>
-      <div class="carousel-item">
+      <div class="item">
         <div class="number">05.</div>
         <div class="title">Mejora continua con alma</div>
         <div class="description">Porque los sistemas pueden ser fríos… si no los llenas de propósito.</div>
       </div>
     </div>
-    <div class="carousel-nav">
-      <button onclick="prevSlide()">←</button>
-      <button onclick="nextSlide()">→</button>
-    </div>
   </div>
 
+  <!-- Botón de continuar -->
   <a class="continue-btn" href="https://qalma25.github.io/qalma-presentacion/accion.html">Continuar →</a>
 
+  <!-- Animación fondo -->
   <script>
-    let index = 0;
-    const track = document.querySelector('.carousel-track');
-    const items = document.querySelectorAll('.carousel-item');
-
-    function updateCarousel() {
-      const offset = -index * 100;
-      track.style.transform = `translateX(${offset}%)`;
-    }
-
-    function nextSlide() {
-      index = (index + 1) % items.length;
-      updateCarousel();
-    }
-
-    function prevSlide() {
-      index = (index - 1 + items.length) % items.length;
-      updateCarousel();
-    }
-
-    updateCarousel();
-
-    // fondo red
     const canvas = document.querySelector('.network-bg');
     const ctx = canvas.getContext('2d');
     let width, height;
@@ -262,6 +239,7 @@
           }
         }
       }
+
       requestAnimationFrame(draw);
     }
 
