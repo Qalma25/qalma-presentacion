@@ -4,9 +4,9 @@
       margin: 0;
       padding: 0;
       height: 100%;
-      overflow: hidden;
       font-family: 'Montserrat', sans-serif;
       background: #ffffff;
+      overflow: hidden;
     }
 
     .slide.como-trabajamos {
@@ -15,10 +15,20 @@
       height: 100vh;
       background: linear-gradient(135deg, #f6fbff, #e8f4ff);
       overflow: hidden;
+    }
+
+    .scroll-container {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      overflow-y: auto;
+      box-sizing: border-box;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      text-align: center;
+      padding: 7rem 1.5rem 7rem;
     }
 
     .logo {
@@ -30,80 +40,69 @@
       height: 45px;
     }
 
-    .content-wrapper {
-      position: relative;
-      z-index: 2;
-      width: 100%;
-      max-width: 900px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 6rem 1.5rem 6rem;
-      box-sizing: border-box;
-      text-align: center;
-    }
-
-    .como-trabajamos h2 {
+    h2 {
       font-size: 2.2rem;
       color: #0a2458;
       margin-bottom: 2rem;
     }
 
-    .card {
-      background: #ffffff;
-      border-left: 6px solid #0a2458;
-      border-radius: 0.75rem;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.05);
-      padding: 2rem;
-      max-width: 500px;
-      text-align: left;
-      margin: 0 auto;
-      min-height: 180px;
+    .carousel {
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: #fff;
+      border-left: 5px solid #0a2458;
+      padding: 1.5rem 2rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+      max-width: 600px;
+      width: 100%;
+      text-align: left;
+      font-size: 1.1rem;
     }
 
     .card .number {
       font-weight: bold;
-      font-size: 1.2rem;
       color: #0a2458;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
     }
 
     .card .title {
-      font-size: 1.1rem;
       font-weight: 600;
+      font-size: 1.1rem;
       color: #1c3c64;
     }
 
     .card .description {
       font-size: 1rem;
-      margin-top: 0.6rem;
       color: #333;
+      margin-top: 0.4rem;
     }
 
-    .arrows {
-      margin-top: 2rem;
+    .controls {
       display: flex;
-      gap: 2rem;
       justify-content: center;
+      gap: 1rem;
     }
 
-    .arrow-btn {
+    .controls button {
       background: #0a2458;
       color: white;
       border: none;
-      padding: 0.7rem 1.1rem;
       border-radius: 50%;
+      width: 36px;
+      height: 36px;
       font-size: 1.2rem;
       cursor: pointer;
     }
 
     .continue-btn {
       position: fixed;
-      bottom: 1rem;
+      bottom: 1.5rem;
       left: 50%;
       transform: translateX(-50%);
       background-color: #0a2458;
@@ -128,16 +127,17 @@
     }
 
     @media (max-width: 768px) {
-      .card {
-        padding: 1.5rem;
+      h2 {
+        font-size: 1.8rem;
       }
 
-      .como-trabajamos h2 {
-        font-size: 1.6rem;
+      .card {
+        font-size: 1.05rem;
+        padding: 1.2rem;
       }
 
       .card .description {
-        font-size: 1.05rem;
+        font-size: 1rem;
       }
 
       .continue-btn {
@@ -150,20 +150,74 @@
   <img src="https://qalma25.github.io/qalma-presentacion/logo_qalma.png" class="logo" alt="Qalma">
   <canvas class="network-bg"></canvas>
 
-  <div class="content-wrapper">
+  <div class="scroll-container">
     <h2>🤩 ¿Cómo trabajamos?</h2>
-    <div class="card" id="card-content">
-      <!-- JS content here -->
-    </div>
-    <div class="arrows">
-      <button class="arrow-btn" onclick="prevCard()">◀</button>
-      <button class="arrow-btn" onclick="nextCard()">▶</button>
+    <div class="carousel">
+      <div class="card" id="step-card">
+        <div class="number">01.</div>
+        <div class="title">Diagnóstico realista</div>
+        <div class="description">Sin adornos. Vemos lo que hay. Y lo que podría ser.</div>
+      </div>
+      <div class="controls">
+        <button onclick="prevStep()">←</button>
+        <button onclick="nextStep()">→</button>
+      </div>
     </div>
   </div>
 
   <a class="continue-btn" href="https://qalma25.github.io/qalma-presentacion/accion.html">Continuar →</a>
 
   <script>
+    const steps = [
+      {
+        number: "01.",
+        title: "Diagnóstico realista",
+        description: "Sin adornos. Vemos lo que hay. Y lo que podría ser."
+      },
+      {
+        number: "02.",
+        title: "Acompañamiento humano",
+        description: "Nos integramos en tu equipo. Nos importa tu cultura, tus valores, tu ritmo."
+      },
+      {
+        number: "03.",
+        title: "Estrategia personalizada",
+        description: "Diseñamos contigo el camino, con flexibilidad y visión."
+      },
+      {
+        number: "04.",
+        title: "Acción imperfecta",
+        description: "No esperamos el momento ideal. Empezamos. Ajustamos. Crecemos."
+      },
+      {
+        number: "05.",
+        title: "Mejora continua con alma",
+        description: "Porque los sistemas pueden ser fríos… si no los llenas de propósito."
+      }
+    ];
+
+    let current = 0;
+    const card = document.getElementById("step-card");
+
+    function updateStep() {
+      card.querySelector(".number").textContent = steps[current].number;
+      card.querySelector(".title").textContent = steps[current].title;
+      card.querySelector(".description").textContent = steps[current].description;
+    }
+
+    function nextStep() {
+      current = (current + 1) % steps.length;
+      updateStep();
+    }
+
+    function prevStep() {
+      current = (current - 1 + steps.length) % steps.length;
+      updateStep();
+    }
+
+    updateStep();
+
+    // Fondo animado
     const canvas = document.querySelector('.network-bg');
     const ctx = canvas.getContext('2d');
     let width, height;
@@ -214,7 +268,6 @@
           }
         }
       }
-
       requestAnimationFrame(draw);
     }
 
@@ -226,57 +279,5 @@
     resize();
     createPoints();
     draw();
-
-    const cards = [
-      {
-        number: "01.",
-        title: "Diagnóstico realista",
-        description: "Sin adornos. Vemos lo que hay. Y lo que podría ser."
-      },
-      {
-        number: "02.",
-        title: "Acompañamiento humano",
-        description: "Nos integramos en tu equipo. Nos importa tu cultura, tus valores, tu ritmo."
-      },
-      {
-        number: "03.",
-        title: "Estrategia personalizada",
-        description: "Diseñamos contigo el camino, con flexibilidad y visión."
-      },
-      {
-        number: "04.",
-        title: "Acción imperfecta",
-        description: "No esperamos el momento ideal. Empezamos. Ajustamos. Crecemos."
-      },
-      {
-        number: "05.",
-        title: "Mejora continua con alma",
-        description: "Porque los sistemas pueden ser fríos… si no los llenas de propósito."
-      }
-    ];
-
-    let current = 0;
-    const container = document.getElementById('card-content');
-
-    function renderCard() {
-      const card = cards[current];
-      container.innerHTML = `
-        <div class="number">${card.number}</div>
-        <div class="title">${card.title}</div>
-        <div class="description">${card.description}</div>
-      `;
-    }
-
-    function nextCard() {
-      current = (current + 1) % cards.length;
-      renderCard();
-    }
-
-    function prevCard() {
-      current = (current - 1 + cards.length) % cards.length;
-      renderCard();
-    }
-
-    renderCard();
   </script>
 </section>
