@@ -22,6 +22,8 @@
       box-sizing: border-box;
       text-align: center;
       position: relative;
+      overflow-x: hidden;
+      overflow-y: auto;
     }
 
     .logos {
@@ -31,6 +33,7 @@
       gap: 1.5rem;
       margin-bottom: 1.5rem;
       flex-wrap: wrap;
+      z-index: 2;
     }
 
     .logos img {
@@ -43,6 +46,7 @@
       font-size: 2rem;
       color: #1d5942;
       margin-bottom: 1rem;
+      z-index: 2;
     }
 
     .intro {
@@ -51,6 +55,7 @@
       margin-bottom: 2rem;
       line-height: 1.6;
       max-width: 700px;
+      z-index: 2;
     }
 
     .acciones {
@@ -59,6 +64,7 @@
       gap: 1rem;
       width: 100%;
       max-width: 700px;
+      z-index: 2;
     }
 
     .acciones .item {
@@ -84,6 +90,7 @@
       color: #345b48;
       max-width: 650px;
       line-height: 1.5;
+      z-index: 2;
     }
 
     .btn-continuar {
@@ -100,11 +107,38 @@
       text-decoration: none;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
       font-weight: 600;
-      z-index: 1000;
+      z-index: 999;
     }
 
     .btn-continuar:hover {
       background-color: #257c5d;
+    }
+
+    /* Hojas animadas */
+    .falling-leaf {
+      position: fixed;
+      top: -60px;
+      width: 32px;
+      height: 32px;
+      background-image: url('https://qalma25.github.io/qalma-presentacion/hoja.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 0.1;
+      animation-name: leaf-fall;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      z-index: 1;
+    }
+
+    @keyframes leaf-fall {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.2;
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
     }
 
     @media (max-width: 768px) {
@@ -136,7 +170,6 @@
 <body>
 
 <section class="slide">
-  <!-- Logos -->
   <div class="logos">
     <img src="https://qalma25.github.io/qalma-presentacion/logo_qalma.png" alt="Logo Qalma">
     <img src="https://qalma25.github.io/qalma-presentacion/logo_qonalma.png" alt="Logo Qonalma">
@@ -160,6 +193,14 @@
     sino el que cuida también de sí mismo y de las personas que lo hacen posible.
   </p>
 
+  <!-- Hojas animadas -->
+  <div class="falling-leaf" style="left: 5%; animation-duration: 12s; animation-delay: 0s;"></div>
+  <div class="falling-leaf" style="left: 20%; animation-duration: 10s; animation-delay: 2s;"></div>
+  <div class="falling-leaf" style="left: 40%; animation-duration: 14s; animation-delay: 1s;"></div>
+  <div class="falling-leaf" style="left: 60%; animation-duration: 9s; animation-delay: 3s;"></div>
+  <div class="falling-leaf" style="left: 80%; animation-duration: 11s; animation-delay: 0.5s;"></div>
+
+  <!-- Botón continuar -->
   <a href="https://qalma25.github.io/qalma-presentacion/distintos" class="btn-continuar">Continuar →</a>
 </section>
 
