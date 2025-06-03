@@ -26,6 +26,7 @@
       align-items: center;
       gap: 2rem;
       margin-bottom: 2rem;
+      flex-wrap: wrap;
     }
 
     .logos img {
@@ -39,6 +40,7 @@
       color: #1d5942;
       margin-bottom: 1.5rem;
       text-align: center;
+      line-height: 1.3;
     }
 
     .sostenibilidad .intro {
@@ -47,6 +49,7 @@
       color: #2e3d31;
       margin-bottom: 2rem;
       text-align: center;
+      line-height: 1.5;
     }
 
     .acciones {
@@ -81,9 +84,9 @@
       color: #345b48;
       max-width: 700px;
       text-align: center;
+      line-height: 1.5;
     }
 
-    /* BOTÓN CONTINUAR */
     .btn-continuar {
       position: fixed;
       bottom: 20px;
@@ -135,14 +138,25 @@
       .sostenibilidad h2 {
         font-size: 1.8rem;
       }
+
       .intro, .cierre {
         font-size: 1rem;
+        padding: 0 1rem;
       }
+
       .acciones .item {
-        font-size: 1rem;
+        font-size: 0.95rem;
+        padding: 1rem 1.2rem;
       }
+
       .logos img {
         height: 45px;
+        max-width: 35vw;
+      }
+
+      .btn-continuar {
+        font-size: 0.9rem;
+        padding: 10px 20px;
       }
     }
   </style>
