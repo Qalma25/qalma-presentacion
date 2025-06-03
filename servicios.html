@@ -1,55 +1,61 @@
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
-
-<section class="slide servicios">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Servicios | Qalma</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
-      padding: 0;
       font-family: 'Montserrat', sans-serif;
+      background: url('https://qalma25.github.io/qalma-presentacion/servicios.png') center center / cover no-repeat fixed;
+      background-size: cover;
     }
 
     .slide.servicios {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 2rem;
+      min-height: 100vh;
+      padding: 120px 20px 120px;
       box-sizing: border-box;
-      z-index: 1;
-
-      background: url('https://qalma25.github.io/qalma-presentacion/servicios.png') center center / cover no-repeat;
-      background-size: cover;
-      background-attachment: fixed;
+      text-align: center;
     }
 
-    .servicios h2 {
+    .logo-container {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+    }
+
+    .logo-container img {
+      height: 50px;
+      width: auto;
+    }
+
+    h2 {
       font-size: 2.2rem;
       color: #0a2458;
       margin-bottom: 1.5rem;
     }
 
-    .servicios p.subtitle {
+    .subtitle {
       font-size: 1.1rem;
       margin-bottom: 2.5rem;
       color: #333;
       font-style: italic;
       max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .cards {
       display: flex;
-      flex-direction: row;
       justify-content: center;
-      align-items: stretch;
       gap: 2rem;
-      width: 100%;
+      flex-wrap: wrap;
       max-width: 1100px;
+      margin: 0 auto;
     }
 
     .card {
@@ -58,17 +64,17 @@
       border-radius: 1rem;
       padding: 2rem 1.5rem;
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
       text-align: center;
-      flex: 1 1 0;
+      flex: 1 1 300px;
+      max-width: 320px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      transition: transform 0.3s ease;
     }
 
     .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
     }
 
     .card h3 {
@@ -106,24 +112,21 @@
     .card ul li {
       margin-bottom: 0.6rem;
       line-height: 1.5;
-      position: relative;
       padding-left: 1rem;
+      position: relative;
     }
 
     .card ul li::before {
-      content: "\2022";
+      content: "•";
       position: absolute;
       left: 0;
       color: #0a2458;
-      font-size: 1rem;
-      line-height: 1;
     }
 
     .emoji {
       font-size: 1.4rem;
     }
 
-    /* BOTÓN fijo centrado abajo */
     .btn-continuar {
       position: fixed;
       bottom: 20px;
@@ -131,97 +134,79 @@
       transform: translateX(-50%);
       background-color: #0a2458;
       color: white;
-      padding: 12px 24px;
-      border: none;
+      padding: 12px 28px;
       border-radius: 30px;
       font-size: 1rem;
-      cursor: pointer;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      z-index: 100;
+      font-weight: 600;
       text-decoration: none;
-      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: background 0.3s ease;
+      z-index: 999;
     }
 
     .btn-continuar:hover {
-      background-color: #133372;
+      background-color: #092040;
     }
 
-    /* RESPONSIVE */
-    @media (max-width: 960px) {
-      .cards {
-        flex-direction: column;
-        align-items: center;
-        gap: 1.5rem;
+    @media (max-width: 768px) {
+      h2 {
+        font-size: 1.8rem;
       }
-
-      .card {
-        width: 90%;
-        padding: 1.5rem 1.2rem;
-      }
-
-      .btn-continuar {
-        font-size: 0.95rem;
-        padding: 10px 20px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .card {
-        padding: 1.2rem 1rem;
-      }
-
-      .card h3 {
+      .subtitle {
         font-size: 1rem;
       }
-
-      .card ul {
-        font-size: 0.9rem;
-      }
-
-      .emoji {
-        font-size: 1.2rem;
-      }
-
       .btn-continuar {
         font-size: 0.9rem;
-        padding: 10px 18px;
-        bottom: 15px;
+        padding: 10px 20px;
+      }
+      .logo-container img {
+        height: 40px;
       }
     }
   </style>
+</head>
+<body>
 
-  <h2>💼 Nuestros Servicios</h2>
-  <p class="subtitle">En Qalma, todo está diseñado para acompañarte en tu crecimiento con estructura y alma.</p>
-
-  <div class="cards">
-    <div class="card">
-      <h3><span class="emoji">🔧</span> Consultoría Estratégica</h3>
-      <ul>
-        <li>Sistemas de Gestión (ISO 9001, 14001, 45001, 27001…)</li>
-        <li>Sostenibilidad y RSC</li>
-        <li>Protección de Datos (RGPD)</li>
-        <li>Mejora continua</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h3><span class="emoji">🧭</span> Formación y Capacitación</h3>
-      <ul>
-        <li>Formación accionable</li>
-        <li>Programas aplicables desde el primer día</li>
-        <li>Competencias VUCA y BANI</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h3><span class="emoji">💻</span> Digitalización Eficiente</h3>
-      <ul>
-        <li>QalmaNet: planifica, mide, mejora</li>
-        <li>Herramientas adaptadas a cada cliente</li>
-        <li>Enfoque humano</li>
-      </ul>
-    </div>
+  <div class="logo-container">
+    <img src="https://qalma25.github.io/qalma-presentacion/logo_qalma.png" alt="Logo Qalma">
   </div>
-</section>
 
-<a href="https://qalma25.github.io/qalma-presentacion/nos-mueve.html" class="btn-continuar">Continuar →</a>
+  <section class="slide servicios">
+    <h2>💼 Nuestros Servicios</h2>
+    <p class="subtitle">En Qalma, todo está diseñado para acompañarte en tu crecimiento con estructura y alma.</p>
+
+    <div class="cards">
+      <div class="card">
+        <h3><span class="emoji">🔧</span> Consultoría Estratégica</h3>
+        <ul>
+          <li>Sistemas de Gestión (ISO 9001, 14001, 45001, 27001…)</li>
+          <li>Sostenibilidad y RSC</li>
+          <li>Protección de Datos (RGPD)</li>
+          <li>Mejora continua</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3><span class="emoji">🧭</span> Formación y Capacitación</h3>
+        <ul>
+          <li>Formación accionable</li>
+          <li>Programas aplicables desde el primer día</li>
+          <li>Competencias VUCA y BANI</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3><span class="emoji">💻</span> Digitalización Eficiente</h3>
+        <ul>
+          <li>QalmaNet: planifica, mide, mejora</li>
+          <li>Herramientas adaptadas a cada cliente</li>
+          <li>Enfoque humano</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <a href="https://qalma25.github.io/qalma-presentacion/nos-mueve.html" class="btn-continuar">Continuar →</a>
+
+</body>
+</html>
