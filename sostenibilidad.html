@@ -1,22 +1,26 @@
-<section class="slide sostenibilidad">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Sostenibilidad | Qalma</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
   <style>
-    html, body {
+    body {
       margin: 0;
-      padding: 0;
-      height: 100%;
       font-family: 'Montserrat', sans-serif;
       background: linear-gradient(135deg, #e4f7ec, #f7fdf8);
       overflow-x: hidden;
-      overflow-y: auto;
     }
 
-    .slide.sostenibilidad {
+    .slide {
       min-height: 100vh;
-      padding: 2rem 1rem 7rem;
-      box-sizing: border-box;
       display: flex;
       flex-direction: column;
       align-items: center;
+      padding: 2rem 1.2rem 6rem;
+      box-sizing: border-box;
+      text-align: center;
       position: relative;
     }
 
@@ -24,52 +28,48 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 2rem;
-      margin-bottom: 2rem;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
       flex-wrap: wrap;
     }
 
     .logos img {
-      height: 60px;
-      max-width: 40vw;
+      height: 55px;
+      max-width: 35vw;
       object-fit: contain;
     }
 
-    .sostenibilidad h2 {
-      font-size: 2.4rem;
+    h2 {
+      font-size: 2rem;
       color: #1d5942;
-      margin-bottom: 1.5rem;
-      text-align: center;
-      line-height: 1.3;
+      margin-bottom: 1rem;
     }
 
-    .sostenibilidad .intro {
-      font-size: 1.2rem;
-      max-width: 850px;
+    .intro {
+      font-size: 1.1rem;
       color: #2e3d31;
       margin-bottom: 2rem;
-      text-align: center;
-      line-height: 1.5;
+      line-height: 1.6;
+      max-width: 700px;
     }
 
     .acciones {
       display: flex;
       flex-direction: column;
-      gap: 1.2rem;
-      max-width: 800px;
+      gap: 1rem;
       width: 100%;
+      max-width: 700px;
     }
 
     .acciones .item {
       background: #ffffff;
-      border-left: 5px solid #6fc08e;
-      padding: 1.3rem 1.6rem;
+      border-left: 4px solid #6fc08e;
+      padding: 1rem 1.3rem;
       border-radius: 0.75rem;
       text-align: left;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
-      font-size: 1.05rem;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+      font-size: 1rem;
       color: #2c4a3e;
-      position: relative;
     }
 
     .acciones .item::before {
@@ -80,10 +80,9 @@
     .cierre {
       margin-top: 2rem;
       font-style: italic;
-      font-size: 1.1rem;
+      font-size: 1rem;
       color: #345b48;
-      max-width: 700px;
-      text-align: center;
+      max-width: 650px;
       line-height: 1.5;
     }
 
@@ -94,77 +93,49 @@
       transform: translateX(-50%);
       background-color: #1d5942;
       color: white;
-      padding: 12px 24px;
+      padding: 12px 28px;
       border: none;
       border-radius: 30px;
       font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
       text-decoration: none;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      z-index: 100;
+      font-weight: 600;
+      z-index: 1000;
     }
 
     .btn-continuar:hover {
       background-color: #257c5d;
     }
 
-    /* Hojas animadas */
-    .falling-leaf {
-      position: absolute;
-      top: -50px;
-      width: 30px;
-      height: 30px;
-      background-image: url('https://qalma25.github.io/qalma-presentacion/hoja.png');
-      background-size: contain;
-      background-repeat: no-repeat;
-      opacity: 0.1;
-      animation-name: leaf-fall;
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
-      z-index: 0;
-      pointer-events: none;
-    }
-
-    @keyframes leaf-fall {
-      0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 0.2;
-      }
-      100% {
-        transform: translateY(110vh) rotate(360deg);
-        opacity: 0;
-      }
-    }
-
     @media (max-width: 768px) {
-      .sostenibilidad h2 {
-        font-size: 1.8rem;
-        padding: 0 1rem;
+      h2 {
+        font-size: 1.6rem;
       }
 
       .intro, .cierre {
         font-size: 1rem;
-        padding: 0 1rem;
+        padding: 0 0.5rem;
       }
 
       .acciones .item {
         font-size: 0.95rem;
-        padding: 1rem 1.2rem;
+        padding: 0.9rem 1rem;
       }
 
       .logos img {
         height: 45px;
-        max-width: 35vw;
       }
 
       .btn-continuar {
         font-size: 0.9rem;
-        padding: 10px 20px;
+        padding: 10px 22px;
       }
     }
   </style>
+</head>
+<body>
 
+<section class="slide">
   <!-- Logos -->
   <div class="logos">
     <img src="https://qalma25.github.io/qalma-presentacion/logo_qalma.png" alt="Logo Qalma">
@@ -189,13 +160,8 @@
     sino el que cuida también de sí mismo y de las personas que lo hacen posible.
   </p>
 
-  <!-- Hojas animadas -->
-  <div class="falling-leaf" style="left: 5%; animation-duration: 12s; animation-delay: 0s;"></div>
-  <div class="falling-leaf" style="left: 25%; animation-duration: 10s; animation-delay: 2s;"></div>
-  <div class="falling-leaf" style="left: 45%; animation-duration: 14s; animation-delay: 1s;"></div>
-  <div class="falling-leaf" style="left: 65%; animation-duration: 9s; animation-delay: 3s;"></div>
-  <div class="falling-leaf" style="left: 85%; animation-duration: 11s; animation-delay: 0.5s;"></div>
-
-  <!-- Botón continuar -->
   <a href="https://qalma25.github.io/qalma-presentacion/distintos" class="btn-continuar">Continuar →</a>
 </section>
+
+</body>
+</html>
