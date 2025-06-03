@@ -148,12 +148,61 @@
     }
 
     @media (max-width: 960px) {
-      .cards {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-  </style>
+  .cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 90%;
+    padding: 1.5rem 1.2rem;
+  }
+
+  .card h3 {
+    font-size: 1.1rem;
+  }
+
+  .card h3::after {
+    width: 30px;
+  }
+
+  .card ul {
+    font-size: 0.95rem;
+  }
+
+  .servicios h2 {
+    font-size: 1.6rem;
+  }
+
+  .servicios p.subtitle {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+}
+@media (max-width: 480px) {
+  .servicios {
+    padding: 1rem;
+  }
+
+  .card {
+    padding: 1.2rem 1rem;
+  }
+
+  .card h3 {
+    font-size: 1rem;
+  }
+
+  .card ul {
+    font-size: 0.9rem;
+  }
+
+  .emoji {
+    font-size: 1.2rem;
+  }
+}
+
 
   
 
