@@ -1,208 +1,12 @@
-<!-- Slide: Nuestros Servicios - Qalma -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+
 <section class="slide servicios">
   <style>
-    .slide.servicios {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 2rem;
-  box-sizing: border-box;
-  z-index: 1;
-
-  background: url('https://qalma25.github.io/qalma-presentacion/servicios.png') center center / cover no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-}
-
-    .video-background {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
-      z-index: -2;
-    }
-
-    .servicios h2 {
-      font-size: 2.2rem;
-      color: #0a2458;
-      margin-bottom: 1.5rem;
-    }
-
-    .servicios p.subtitle {
-      font-size: 1.1rem;
-      margin-bottom: 2.5rem;
-      color: #333;
-      font-style: italic;
-      max-width: 800px;
-    }
-
-    .cards {
-      display: flex;
-      justify-content: center;
-      align-items: stretch;
-      gap: 2rem;
-      width: 100%;
-      max-width: 1100px;
-    }
-
-    .card {
-      background: #f5f9ff;
-      border: 1px dashed #d2e4f7;
-      border-radius: 1rem;
-      padding: 2rem 1.5rem;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      text-align: center;
-      width: 100%;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-    }
-
-    .card h3 {
-      font-size: 1.2rem;
-      color: #0a2458;
-      margin-bottom: 1rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 0.5rem;
-      position: relative;
-    }
-
-    .card h3::after {
-      content: "";
-      position: absolute;
-      bottom: -0.5rem;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 40px;
-      height: 3px;
-      background: #0a2458;
-      border-radius: 2px;
-    }
-
-    .card ul {
-      list-style: none;
+    body {
+      margin: 0;
       padding: 0;
-      font-size: 0.95rem;
-      color: #333;
-      margin-top: 1.5rem;
-      text-align: left;
+      font-family: 'Montserrat', sans-serif;
     }
-
-    .card ul li {
-      margin-bottom: 0.6rem;
-      line-height: 1.5;
-      position: relative;
-      padding-left: 1rem;
-    }
-
-    .card ul li::before {
-      content: "\2022";
-      position: absolute;
-      left: 0;
-      color: #0a2458;
-      font-size: 1rem;
-      line-height: 1;
-    }
-
-    .emoji {
-      font-size: 1.4rem;
-    }
-
-    @media (max-width: 960px) {
-  .cards {
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-  }
-
-  .card {
-    width: 100%;
-    max-width: 90%;
-    padding: 1.5rem 1.2rem;
-  }
-
-  .card h3 {
-    font-size: 1.1rem;
-  }
-
-  .card h3::after {
-    width: 30px;
-  }
-
-  .card ul {
-    font-size: 0.95rem;
-  }
-
-  .servicios h2 {
-    font-size: 1.6rem;
-  }
-
-  .servicios p.subtitle {
-    font-size: 1rem;
-    padding: 0 10px;
-  }
-}
-@media (max-width: 480px) {
-  .servicios {
-    padding: 1rem;
-  }
-
-  .card {
-    padding: 1.2rem 1rem;
-  }
-
-  .card h3 {
-    font-size: 1rem;
-  }
-
-  .card ul {
-    font-size: 0.9rem;
-  }
-
-  .emoji {
-    font-size: 1.2rem;
-  }
-}
-
-<!-- Slide: Nuestros Servicios - Qalma -->
-<section class="slide servicios">
-  <style>
-    html, body {
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  height: 100%;
-  font-family: 'Montserrat', sans-serif;
-  html, body {
-  background: url('https://qalma25.github.io/qalma-presentacion/servicios.gif') center center / cover no-repeat;
-  ...
-}
-
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
 
     .slide.servicios {
       position: fixed;
@@ -218,27 +22,10 @@
       padding: 2rem;
       box-sizing: border-box;
       z-index: 1;
-    }
 
-    .slide.servicios::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(255,255,255,0.95);
-      z-index: -1;
-    }
-
-    .video-background {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
-      z-index: -2;
+      background: url('https://qalma25.github.io/qalma-presentacion/servicios.png') center center / cover no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
     }
 
     .servicios h2 {
@@ -257,6 +44,7 @@
 
     .cards {
       display: flex;
+      flex-direction: row;
       justify-content: center;
       align-items: stretch;
       gap: 2rem;
@@ -272,8 +60,7 @@
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       text-align: center;
-      width: 100%;
-      flex: 1;
+      flex: 1 1 0;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -336,66 +123,72 @@
       font-size: 1.4rem;
     }
 
+    /* BOTÓN fijo centrado abajo */
+    .btn-continuar {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #0a2458;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      z-index: 100;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-continuar:hover {
+      background-color: #133372;
+    }
+
+    /* RESPONSIVE */
     @media (max-width: 960px) {
-  .cards {
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-  }
+      .cards {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+      }
 
-  .card {
-    width: 100%;
-    max-width: 90%;
-    padding: 1.5rem 1.2rem;
-  }
+      .card {
+        width: 90%;
+        padding: 1.5rem 1.2rem;
+      }
 
-  .card h3 {
-    font-size: 1.1rem;
-  }
+      .btn-continuar {
+        font-size: 0.95rem;
+        padding: 10px 20px;
+      }
+    }
 
-  .card h3::after {
-    width: 30px;
-  }
+    @media (max-width: 480px) {
+      .card {
+        padding: 1.2rem 1rem;
+      }
 
-  .card ul {
-    font-size: 0.95rem;
-  }
+      .card h3 {
+        font-size: 1rem;
+      }
 
-  .servicios h2 {
-    font-size: 1.6rem;
-  }
+      .card ul {
+        font-size: 0.9rem;
+      }
 
-  .servicios p.subtitle {
-    font-size: 1rem;
-    padding: 0 10px;
-  }
-}
+      .emoji {
+        font-size: 1.2rem;
+      }
 
-@media (max-width: 480px) {
-  .servicios {
-    padding: 1rem;
-  }
-
-  .card {
-    padding: 1.2rem 1rem;
-  }
-
-  .card h3 {
-    font-size: 1rem;
-  }
-
-  .card ul {
-    font-size: 0.9rem;
-  }
-
-  .emoji {
-    font-size: 1.2rem;
-  }
-}
-
-
- </style>
-  
+      .btn-continuar {
+        font-size: 0.9rem;
+        padding: 10px 18px;
+        bottom: 15px;
+      }
+    }
+  </style>
 
   <h2>💼 Nuestros Servicios</h2>
   <p class="subtitle">En Qalma, todo está diseñado para acompañarte en tu crecimiento con estructura y alma.</p>
@@ -431,3 +224,4 @@
   </div>
 </section>
 
+<a href="https://qalma25.github.io/qalma-presentacion/nos-mueve.html" class="btn-continuar">Continuar →</a>
