@@ -19,11 +19,21 @@
       background: linear-gradient(135deg, #fef6f8, #fffdfd);
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       text-align: center;
-      padding: 3rem 2rem;
+      padding: 2rem;
       box-sizing: border-box;
+    }
+
+    .llamada-accion .content {
+      max-width: 800px;
+      z-index: 2;
+    }
+
+    .logo-top {
+      width: 200px;
+      margin-bottom: 2rem;
     }
 
     .llamada-accion h2 {
@@ -37,7 +47,6 @@
       font-size: 1.2rem;
       color: #333;
       line-height: 1.6;
-      max-width: 800px;
       animation: fadeInUp 1.2s ease-out;
     }
 
@@ -54,6 +63,28 @@
     .frases span:nth-child(4) { animation-delay: 1.4s; }
     .frases span:nth-child(5) { animation-delay: 1.7s; }
 
+    .cta-button {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #94274d;
+      color: white;
+      padding: 0.8rem 1.6rem;
+      border: none;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      text-decoration: none;
+      z-index: 10;
+    }
+
+    .cta-button:hover {
+      background-color: #751d3a;
+    }
+
     @keyframes fadeInDown {
       from { opacity: 0; transform: translateY(-30px); }
       to { opacity: 1; transform: translateY(0); }
@@ -65,21 +96,38 @@
     }
 
     @media (max-width: 768px) {
+      .logo-top {
+        width: 140px;
+        margin-bottom: 1rem;
+      }
+
       .llamada-accion h2 {
         font-size: 1.8rem;
       }
+
       .frases {
         font-size: 1rem;
+      }
+
+      .cta-button {
+        font-size: 1rem;
+        padding: 0.6rem 1.2rem;
+        bottom: 20px;
       }
     }
   </style>
 
-  <h2>📣 ¿Y ahora?</h2>
-  <div class="frases">
-    <span>Si estás aquí, es por algo.</span>
-    <span>Tal vez estás buscando ordenar.</span>
-    <span>O simplificar.</span>
-    <span>O dar ese salto que sabes que necesitas.</span>
-    <span>Sea cual sea el motivo, si algo de esto te ha resonado… es momento de hablar.</span>
+  <div class="content">
+    <img src="logo_qalma.png" alt="Logo Qalma" class="logo-top" />
+    <h2>📣 ¿Y ahora?</h2>
+    <div class="frases">
+      <span>Si estás aquí, es por algo.</span>
+      <span>Tal vez estás buscando ordenar.</span>
+      <span>O simplificar.</span>
+      <span>O dar ese salto que sabes que necesitas.</span>
+      <span>Sea cual sea el motivo, si algo de esto te ha resonado… es momento de hablar.</span>
+    </div>
   </div>
+
+  <a href="https://qalma25.github.io/qalma-presentacion/hablemos.html" class="cta-button">Continuar</a>
 </section>
