@@ -31,11 +31,24 @@
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
+      overflow: hidden;
+    }
+
+    canvas.lines-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
     }
 
     .content {
       max-width: 500px;
       width: 100%;
+      position: relative;
+      z-index: 2;
     }
 
     .logo-top {
@@ -126,7 +139,7 @@
     /* MÓVIL */
     @media (max-width: 768px) {
       html {
-        font-size: 18px; /* ¡Aquí subimos el tamaño base en móvil! */
+        font-size: 18px;
       }
 
       .slide.llamada-accion {
@@ -155,6 +168,10 @@
     }
   </style>
 
+  <!-- Fondo animado -->
+  <canvas class="lines-bg"></canvas>
+
+  <!-- Contenido principal -->
   <div class="content">
     <img src="logo_qalma.png" alt="Logo Qalma" class="logo-top" />
     <h2>📣 ¿Y ahora?</h2>
@@ -167,5 +184,61 @@
     </div>
   </div>
 
+  <!-- Botón -->
   <a href="https://qalma25.github.io/qalma-presentacion/hablemos.html" class="cta-button">Continuar</a>
+
+  <!-- Script para líneas animadas -->
+  <script>
+    const canvas = document.querySelector('.lines-bg');
+    const ctx = canvas.getContext('2d');
+    let width, height;
+
+    const lines = [];
+
+    function resize() {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    }
+
+    function createLines(count = 25) {
+      lines.length = 0;
+      for (let i = 0; i < count; i++) {
+        lines.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          length: 80 + Math.random() * 100,
+          speed: 0.3 + Math.random() * 0.3,
+          opacity: 0.08 + Math.random() * 0.1
+        });
+      }
+    }
+
+    function drawLines() {
+      ctx.clearRect(0, 0, width, height);
+      lines.forEach(line => {
+        ctx.beginPath();
+        ctx.moveTo(line.x, line.y);
+        ctx.lineTo(line.x + line.length, line.y + line.length * 0.3);
+        ctx.strokeStyle = `rgba(148, 39, 77, ${line.opacity})`;
+        ctx.lineWidth = 1;
+        ctx.stroke();
+
+        line.y += line.speed;
+        if (line.y > height + 50) {
+          line.y = -100;
+          line.x = Math.random() * width;
+        }
+      });
+      requestAnimationFrame(drawLines);
+    }
+
+    window.addEventListener('resize', () => {
+      resize();
+      createLines();
+    });
+
+    resize();
+    createLines();
+    drawLines();
+  </script>
 </section>
