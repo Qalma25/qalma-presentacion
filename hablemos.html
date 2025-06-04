@@ -1,4 +1,6 @@
-<!-- Slide: Hablemos - Qalma -->
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
 <section class="slide hablemos">
   <style>
     html, body {
@@ -11,19 +13,25 @@
     }
 
     .slide.hablemos {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: linear-gradient(135deg, #f4fafe, #eef2ff);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 3rem 2rem;
-      box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #f4fafe, #eef2ff);
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* CAMBIA de 'flex-start' a 'center' */
+  align-items: center;
+  text-align: center;
+  padding: 4rem 1.5rem 2rem;
+  box-sizing: border-box;
+}
+
+
+    .hablemos .logo-top {
+      width: 180px;
+      margin-bottom: 2rem;
     }
 
     .hablemos h2 {
@@ -38,11 +46,12 @@
       color: #444;
       margin-bottom: 2rem;
       animation: fadeInUp 1s ease-out;
+      max-width: 500px;
     }
 
     .acciones-contacto {
       display: flex;
-      gap: 1.5rem;
+      gap: 1.2rem;
       flex-wrap: wrap;
       justify-content: center;
       animation: fadeInUp 1.3s ease-out;
@@ -78,18 +87,32 @@
     }
 
     @media (max-width: 768px) {
-      .hablemos h2 {
-        font-size: 1.8rem;
+      .hablemos .logo-top {
+        width: 140px;
+        margin-bottom: 1.5rem;
       }
+
+      .hablemos h2 {
+        font-size: 1.9rem;
+      }
+
       .hablemos .subtexto {
         font-size: 1rem;
       }
+
       .acciones-contacto a {
         font-size: 0.95rem;
         padding: 0.8rem 1.2rem;
       }
+
+      .acciones-contacto {
+        gap: 1rem;
+      }
     }
   </style>
+
+  <!-- Logo de Qalma -->
+  <img src="logo_qalma.png" alt="Logo Qalma" class="logo-top" />
 
   <h2>🤝 Hablemos</h2>
   <p class="subtexto">
