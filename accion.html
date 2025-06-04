@@ -1,5 +1,9 @@
 <section class="slide llamada-accion">
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     html, body {
       margin: 0;
       padding: 0;
@@ -14,35 +18,28 @@
       min-height: 100vh;
       background: linear-gradient(135deg, #fef6f8, #fffdfd);
       text-align: center;
-      padding: 5rem 2rem 10rem;
-      box-sizing: border-box;
+      padding: 5rem 1.5rem 10rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
     }
 
-    /* Centrado solo en pantallas grandes */
-    @media (min-width: 769px) {
-      .slide.llamada-accion {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-    }
-
-    .llamada-accion .content {
-      max-width: 800px;
-      margin: 0 auto;
-      z-index: 2;
+    .content {
+      max-width: 500px;
+      width: 100%;
     }
 
     .logo-top {
-      width: 200px;
+      width: 180px;
       margin-bottom: 2rem;
     }
 
     .llamada-accion h2 {
-      font-size: 2.4rem;
+      font-size: 2.2rem;
       color: #94274d;
       margin-bottom: 2rem;
+      font-weight: 600;
       animation: fadeInDown 0.8s ease-out;
     }
 
@@ -82,6 +79,7 @@
       transition: background 0.3s ease;
       text-decoration: none;
       z-index: 10;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
 
     .cta-button:hover {
@@ -98,10 +96,34 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
+    /* PC: centrado vertical si hay espacio */
+    @media (min-width: 769px) {
+      .slide.llamada-accion {
+        justify-content: center;
+      }
+
+      .logo-top {
+        width: 200px;
+      }
+
+      .llamada-accion h2 {
+        font-size: 2.4rem;
+      }
+
+      .frases {
+        font-size: 1.2rem;
+      }
+    }
+
+    /* MÓVIL */
     @media (max-width: 768px) {
+      .slide.llamada-accion {
+        padding: 4rem 1rem 12rem;
+      }
+
       .logo-top {
         width: 140px;
-        margin-bottom: 1rem;
+        margin-bottom: 1.2rem;
       }
 
       .llamada-accion h2 {
@@ -115,13 +137,8 @@
 
       .cta-button {
         font-size: 1rem;
-        padding: 0.6rem 1.2rem;
+        padding: 0.7rem 1.4rem;
         bottom: 20px;
-      }
-
-      .slide.llamada-accion {
-        padding: 4rem 1.2rem 11rem;
-        display: block; /* Anula flex en móvil */
       }
     }
   </style>
