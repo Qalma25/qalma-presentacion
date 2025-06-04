@@ -1,7 +1,13 @@
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
 <section class="slide llamada-accion">
   <style>
     * {
       box-sizing: border-box;
+    }
+
+    html {
+      font-size: 16px;
     }
 
     html, body {
@@ -10,6 +16,8 @@
       font-family: 'Montserrat', sans-serif;
       background: #ffffff;
       overflow-x: hidden;
+      font-size: 1.1rem;
+      line-height: 1.6;
     }
 
     .slide.llamada-accion {
@@ -96,7 +104,7 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* PC: centrado vertical si hay espacio */
+    /* PC */
     @media (min-width: 769px) {
       .slide.llamada-accion {
         justify-content: center;
@@ -117,6 +125,10 @@
 
     /* MÓVIL */
     @media (max-width: 768px) {
+      html {
+        font-size: 18px; /* ¡Aquí subimos el tamaño base en móvil! */
+      }
+
       .slide.llamada-accion {
         padding: 4rem 1rem 12rem;
       }
@@ -127,12 +139,12 @@
       }
 
       .llamada-accion h2 {
-        font-size: 1.8rem;
+        font-size: 2rem;
         margin-bottom: 1.5rem;
       }
 
       .frases {
-        font-size: 1rem;
+        font-size: 1.1rem;
       }
 
       .cta-button {
